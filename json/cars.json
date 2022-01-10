@@ -1,0 +1,11 @@
+[{
+        "id": "0",
+        "img": "",
+        "brand": "mercedes",
+        "logo": "/images/mercedes.png",
+        "model": "Mercedes-AMG GT",
+        "type": "Coupe",
+        "year": "2021",
+        "price": "$118.600"
+    }, 
+]
