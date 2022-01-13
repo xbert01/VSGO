@@ -1,173 +1,204 @@
+/* Fonts */
+@font-face {
+  font-family: "roboto";
+  src: url("fonts/roboto/robotomono-variablefont_wght-webfont.woff2")
+      format("woff2"),
+    url("fonts/roboto/robotomono-variablefont_wght-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("fonts/roboto/robotomono-italic-variablefont_wght-webfont.woff2")
+      format("woff2"),
+    url("rfonts/roboto/obotomono-italic-variablefont_wght-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
 }
 
-@font-face {}
+@font-face {
+}
 
 /* --- root variables --- */
 :root {
-    --black: #222;
-    --red: #c20028;
-    --grey: #7a7a7a;
-    --white: #f1f1f1;
-    --font-family: "Lato", sans-serif;
+  --black: #222;
+  --red: #c20028;
+  --grey: #7a7a7a;
+  --white: #f1f1f1;
+  --font-family: "roboto", Arial, Helvetica, sans-serif;
 }
 
 /*General styling*/
 html {
-    color: ;
-    font-family: ;
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    background-color: ;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  /* 62.5% of 16px = 10px*/
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-size: 1rem;
 }
 
 section {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    font-family: "IMMORTAL";
-    font-size: 60px;
-    color: var(--white);
-    margin-bottom: 30px;
+  font-family: "roboto";
+  font-size: 60px;
+  color: var(--white);
+  margin-bottom: 30px;
+  font-size: 3rem;
 }
 
 h2 {
-    font-family: "IMMORTAL";
-    font-size: 60px;
-    color: var(--red);
+  font-family: "roboto";
+  font-size: 60px;
+  color: var(--red);
+  font-size: 2.5rem;
 }
 
 h3 {
-    font-family: "IMMORTAL";
-    color: var(--white);
-    font-size: 40px;
-    text-align: center;
+  font-family: "roboto";
+  color: var(--white);
+  font-size: 40px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 h4 {
-    font-family: "IMMORTAL";
-    font-size: 30px;
-    color: var(--white);
+  font-family: "roboto";
+  font-size: 30px;
+  color: var(--white);
+  font-size: 1.5rem;
 }
 
 h5 {
-    font-family: "IMMORTAL";
-    font-size: 25px;
-    color: var(--white);
+  font-family: "roboto";
+  font-size: 25px;
+  color: var(--white);
+  font-size: 1.25rem;
 }
 
 p {
-    font-family: "IMMORTAL";
-    max-width: 600px;
-    color: var(--white);
+  font-family: "roboto";
+  max-width: 600px;
+  color: var(--white);
+  font-size: 1rem;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-
-
 
 /*TopBar styling*/
 .topbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(133, 0, 82);
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(34, 32, 32);
+
+  color: white;
 }
 
 .points {
-    width: 10%;
-    height: 100%;
+  width: 10%;
+  height: 100%;
 }
 
 .points p {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .record {
-    width: 10%;
-    height: 100%;
+  width: 10%;
+  height: 100%;
 }
 
 .record p {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 /*main container styling*/
 .car-cards-container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 30rem;
-    background-color: blue;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 30rem;
+  background-color: blue;
 }
 
 .car-cards {
-    display: flex;
-    background: rgb(196, 111, 0);
-    width: 100%;
-    height: 100%;
+  display: flex;
+  background: rgb(100, 222, 197);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 222, 197, 0.9934348739495799) 2%,
+    rgba(83, 209, 255, 1) 30%,
+    rgba(28, 123, 157, 1) 63%,
+    rgba(8, 38, 107, 1) 100%
+  );
+  width: 100%;
+  height: 100%;
 }
 
 .car-single-card {
-    border: 5px solid rgb(0, 0, 0);
-    width: 50%;
-    height: 100%;
-
+  border: 5px solid rgb(0, 0, 0);
+  width: 50%;
+  height: 100%;
 }
 
 .versus-bar {
-    align-items: center;
-    display: flex;
-    height: 30rem;
-    justify-content: center;
-    left: calc(50% - 2rem);
-    opacity: 1;
-    position: absolute;
+  align-items: center;
+  display: flex;
+  height: 30rem;
+  justify-content: center;
+  left: calc(50% - 2rem);
+  opacity: 1;
+  position: absolute;
 }
 
-
 .versus-bar::before {
-    background-color: black;
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 5px;
-
+  background-color: black;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 5px;
 }
 
 .vs {
-    border: 2px solid black;
-    background-color: rgb(0, 0, 0);
-    border-radius: 10%;
-    color: white;
-    width: 4rem;
-    padding: 0.3rem;
-    z-index: 0;
+  border: 2px solid black;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10%;
+  color: white;
+  width: 4rem;
+  padding: 0.3rem;
+  z-index: 0;
 }
 
 .vs h3 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
