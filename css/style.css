@@ -34,15 +34,24 @@
 
 /* --- root variables --- */
 :root {
+<<<<<<< Updated upstream
   --black: #222;
   --red: #c20028;
   --grey: #7a7a7a;
   --white: #f1f1f1;
   --font-family: "roboto", Arial, Helvetica, sans-serif;
+=======
+    --blue-dark: #002A32;
+    --blue-light: #006AA3;
+    --white: #F0FAF2;
+    --font-family: 'Karla',
+        sans-serif;
+>>>>>>> Stashed changes
 }
 
 /*General styling*/
 html {
+<<<<<<< Updated upstream
   /* 62.5% of 16px = 10px*/
   font-size: 62.5%;
   height: 100%;
@@ -51,6 +60,17 @@ html {
   padding: 0px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+=======
+    color: ;
+    font-family: var(--font-family);
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: ;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+>>>>>>> Stashed changes
 }
 
 body {
@@ -67,6 +87,7 @@ section {
 }
 
 h1 {
+<<<<<<< Updated upstream
   font-family: "roboto";
   font-size: 60px;
   color: var(--white);
@@ -108,6 +129,42 @@ p {
   max-width: 600px;
   color: var(--white);
   font-size: 1rem;
+=======
+    font-family: var(--font-family);
+    font-size: 60px;
+    color: var(--white);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-size: 60px;
+    color: var(--red);
+}
+
+h3 {
+    font-family: var(--font-family);
+    color: var(--white);
+    font-size: 40px;
+    text-align: center;
+}
+
+h4 {
+    font-family: var(--font-family);
+    font-size: 30px;
+    color: var(--white);
+}
+
+h5 {
+    font-family: var(--font-family);
+    font-size: 25px;
+    color: var(--white);
+}
+
+p {
+    font-family: var(--font-family);
+    color: var(--white);
+>>>>>>> Stashed changes
 }
 
 ul {
@@ -116,12 +173,19 @@ ul {
 
 /*TopBar styling*/
 .topbar {
+<<<<<<< Updated upstream
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(34, 32, 32);
 
   color: white;
+=======
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--blue-dark);
+    color: white;
+>>>>>>> Stashed changes
 }
 
 .points {
@@ -131,15 +195,26 @@ ul {
   padding: 1rem;
 }
 
+<<<<<<< Updated upstream
 .record {
   margin-right: 1rem;
   width: 10%;
   height: 100%;
   padding: 1rem;
+=======
+.highscore {
+    width: 10%;
+    height: 100%;
+}
+
+.highscore p {
+    padding: 1rem;
+>>>>>>> Stashed changes
 }
 
 /*main container styling*/
 .car-cards-container {
+<<<<<<< Updated upstream
   margin: 0;
   padding: 0;
   width: 100%;
@@ -165,6 +240,25 @@ ul {
   border: 5px solid rgb(0, 0, 0);
   width: 50%;
   height: 100%;
+=======
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30rem;
+}
+
+.car-cards {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.car-single-card {
+    border: 5px solid var(--blue-dark);
+    width: 50%;
+    height: 100%;
+
+>>>>>>> Stashed changes
 }
 
 .versus-bar {
@@ -178,6 +272,7 @@ ul {
 }
 
 .versus-bar::before {
+<<<<<<< Updated upstream
   background-color: black;
   content: "";
   display: block;
@@ -199,3 +294,47 @@ ul {
 .vs h3 {
   font-size: 1rem;
 }
+=======
+    background-color: var(--blue-dark);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 6px;
+
+}
+
+.vs {
+    background-color: var(--blue-dark);
+    border-radius: 15px;
+    color: white;
+    width: 4rem;
+    padding: 0.3rem;
+    z-index: 0;
+}
+
+.vs h3 {
+    font-size: 1rem;
+}
+
+.car-random {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.car-random img {
+    width: 50px;
+}
+
+.car-random h2 {
+    color: var(--blue-dark);
+    font-size: 2rem;
+}
+
+.car-name-container h3 {
+    color: var(--blue-light);
+    font-size: 1.5rem;
+}
+>>>>>>> Stashed changes
