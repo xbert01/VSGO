@@ -118,26 +118,23 @@ ul {
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: rgb(34, 32, 32);
 
   color: white;
 }
 
 .points {
+  margin-left: 1rem;
   width: 10%;
   height: 100%;
-}
-
-.points p {
   padding: 1rem;
 }
 
 .record {
+  margin-right: 1rem;
   width: 10%;
   height: 100%;
-}
-
-.record p {
   padding: 1rem;
 }
 
