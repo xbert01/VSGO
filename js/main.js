@@ -37,38 +37,8 @@ function appendCars(cars) {
         document.querySelector(".car-right").innerHTML = htmlTemplate;
     }
 }
-/*let car.id = Math.random() * 5;
+/*
+let car.id = Math.random() * 5;
 
 let cars = cars[Math.floor(Math.random() * cars.length)];
-
-/* 
-Selects a random element from JSON
 */
-$.getJSON('json/cars.json').done(function (data) {
-    window.questionnaire = data;
-    console.log(window.questionnaire);
-    startGame();
-});
-
-function pickRandomQuestion() {
-    window.selectedquestion = window.questionnaire[Math.floor(Math.random * window.questionnaire.length)];
-    console.log(window.selectedquestion);
-    console.log(window.questionnaire);
-}
-
-$.getJSON('js/cars.json').done(function (data) {
-    window.questionnaire = data;
-    window.questionnaire.sort(function () {
-        return .5 - Math.random();
-    });
-    console.log(window.questionnaire);
-    startGame();
-});
-
-function pickRandomQuestion() {
-    var obj_keys = Object.keys(window.questionnaire);
-    var ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
-    window.selectedquestion = window.questionnaire[ran_key];
-    console.log(window.selectedquestion);
-    console.log(window.questionnaire);
-}
