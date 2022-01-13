@@ -134,17 +134,10 @@ ul {
   padding: 0;
   width: 100%;
   height: 30rem;
-  background-color: blue;
 }
 
 .car-cards {
   display: flex;
-  background: rgb(100, 222, 197);
-  background: linear-gradient(90deg,
-      rgba(100, 222, 197, 0.9934348739495799) 2%,
-      rgba(83, 209, 255, 1) 30%,
-      rgba(28, 123, 157, 1) 63%,
-      rgba(8, 38, 107, 1) 100%);
   width: 100%;
   height: 100%;
   position: relative;
@@ -195,11 +188,15 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .car-random img {
   width: 50px;
 }
+
 
 .car-random h2 {
   color: var(--blue-dark);
@@ -211,8 +208,12 @@ ul {
   font-size: 1.5rem;
 }
 
-.car-background {
-  position: absolute;
-  z-index: 0;
-
+.car-left,
+.car-right,
+.car-left-container,
+.car-right-container {
+  width: 100%;
+  height: 100%;
 }
+
+/*Images*/
