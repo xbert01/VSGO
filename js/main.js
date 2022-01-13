@@ -1,3 +1,4 @@
+cd
 let _allCars = [];
 /*
 Fetches json data from the file cars.json
@@ -18,20 +19,26 @@ Appends json data to the DOM
 function appendCars(cars) {
     let htmlTemplate = "";
     for (let car of cars) {
-        htmlTemplate += /*html*/ `
-        <div class="car-random"> 
-                <img src=${car.logo}>
-                <br>
-                <div class="car-name-container">
-                <h3>${car.model}</h3>
-                <h3>${car.type}</h3>
-                </div>
-                <br>
-                <h2>${car.year}</h2>    
-        </div>
-    `;
+        if (car.id === "1") {
+            htmlTemplate += /*html*/ `
+            <div 
+            class = "car-random">
+                    <img src=${car.img} class = "car-background">
+
+                    <img src=${car.logo}>
+                    <br>
+                    <div class="car-name-container">
+                    <h3>${car.model}</h3>
+                    <h3>${car.type}</h3>
+                    </div>
+                    <br>
+                    <h2>${car.year}</h2>    
+            </div>
+        `;
+        }
+        document.querySelector(".car-left").innerHTML = htmlTemplate;
+        document.querySelector(".car-right").innerHTML = htmlTemplate;
     }
-    document.querySelector(".car").innerHTML = htmlTemplate;
 }
 
 
