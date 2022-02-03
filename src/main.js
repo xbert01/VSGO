@@ -10,6 +10,13 @@ async function fetchCars() {
     appendCars(_allCars);
 }
 
+function isEven(limit) {
+    for (let i = 0; i <= limit; i++) {
+        if (i % 2 === 0) return true;
+    }
+}
+
+console.log(isEven(10));
 fetchCars();
 
 /*
@@ -18,7 +25,7 @@ Appends json data to the DOM
 function appendCars(cars) {
     let htmlTemplate = "";
     for (let car of cars) {
-        if (car.id === Math.floor(Math.random() * 10)) {
+        if (car.id == isEven()) {
             htmlTemplate += /*html*/ `
             <div style = "background: url('${car.img }') no-repeat center;   background-size: cover;"
             class = "car-random">
@@ -33,12 +40,6 @@ function appendCars(cars) {
             </div>
         `;
         }
-        document.querySelector(".car-left").innerHTML = htmlTemplate;
-        document.querySelector(".car-right").innerHTML = htmlTemplate;
+        document.querySelector(".single-car").innerHTML = htmlTemplate;
     }
 }
-/*
-let car.id = Math.random() * 5;
-
-let cars = cars[Math.floor(Math.random() * cars.length)];
-*/
