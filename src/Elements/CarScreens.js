@@ -1,13 +1,14 @@
 import VersusBar from "./VersusBar";
-import SingleCarScreen from "./SingleCarScreen";
+import LeftCarScreen from "./LeftCarScreen";
+import RightCarScreen from "./RightCarScreen";
 
 const CarScreens = () => {
   return (
-        <div className="car-screens">
-            <SingleCarScreen />
-                <VersusBar />
-            <SingleCarScreen />
-        </div>
+    <div className="carScreens">
+      <LeftCarScreen />
+      <VersusBar />
+      <RightCarScreen />
+    </div>
   );
 };
 
