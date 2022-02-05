@@ -4,7 +4,7 @@ const CarListOdd = () => {
   const odd = Cars.filter(car => car.id % 2 !== 0);
   console.log(odd);
   return (
-    <div className = "carRandom">
+    <div>
                     <img src= {odd.logo} />
                     <div className = "car-name-container" >
                     <h3>{odd.model}</h3>

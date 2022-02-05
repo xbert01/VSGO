@@ -2,10 +2,10 @@ import Cars from "../json/Cars.json";
 
 const EvenCarList = () => {
   const even = Cars.filter(car => car.id % 2 === 0);
-  console.log(even);
+  const mapped = even.map(car => {car})
+  console.log(mapped);
   return (
-    <div style = {{background: "url(even.img)", backgroundSize: "cover"}}
-            className = "carRandom">
+    <div>
                     <img src= {even.logo} />
                     <div className = "car-name-container" >
                     <h3>{even.model}</h3>
@@ -18,4 +18,3 @@ const EvenCarList = () => {
 export default EvenCarList;
 
 
-// const mapped = even.map(car => ({car}))
