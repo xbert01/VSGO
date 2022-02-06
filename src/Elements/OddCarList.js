@@ -1,18 +1,26 @@
 import Cars from "../json/Cars.json";
 
-const CarListOdd = () => {
-  const odd = Cars.filter(car => car.id % 2 !== 0);
-  console.log(odd);
-  return (
-    <div>
-                    <img src= {odd.logo} />
-                    <div className = "car-name-container" >
-                    <h3>{odd.model}</h3>
-                    <h3>{odd.type}</h3>
-                    </div>
-                    <h2>{odd.year}</h2>       
-            </div>
-  );
+const OddCarList = () => {
+  const odd = Cars.filter((car) => car.id % 2 !== 0);
+  return odd.map((car) => {
+    return (
+      <section className="carContainer">
+        <img
+          className="demo-bg"
+          src={car.img}
+          alt="background-image"
+        />
+        <div className="car-list-container" key={car.id}>
+          <img src={car.logo} alt="car-logo" />
+          <div className="car-name-container">
+            <h3>{car.model}</h3>
+            <h3>{car.type}</h3>
+          </div>
+          <h2>{car.year}</h2>
+        </div>
+      </section>
+    );
+  });
 };
-export default CarListOdd;
 
+export default OddCarList;

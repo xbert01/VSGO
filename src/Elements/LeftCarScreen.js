@@ -2,7 +2,7 @@ import EvenCarList from "./EvenCarList";
 
 const LeftCarScreen = () => {
   return (
-    <div className = "carRandom">
+    <div className="carRandom">
       <EvenCarList />
     </div>
   );

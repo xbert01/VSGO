@@ -1,9 +1,9 @@
 [
   {
     "id": "0",
-    "img": "/images/AMG-GT.jpg",
+    "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/AMG-GT_wyrzfn.jpg",
     "brand": "mercedes",
-    "logo": "/images/mercedes.png",
+    "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074901/images/mercedes_lgm4oo.png",
     "model": "Mercedes-AMG GT",
     "type": "Coupe",
     "year": "2021",
@@ -11,19 +11,19 @@
   },
   {
     "id": "1",
-    "img": "/images/fiat-126p.jpg",
+    "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074897/images/fiat-126p_eqqama.jpg",
     "brand": "fiat",
-    "logo": "/images/fiat.png",
-    "model": "Fiat 126p by Xbert",
-    "type": "",
+    "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074896/images/fiat_zixl0d.png",
+    "model": "Fiat 126p",
+    "type": "Bestia",
     "year": "1973",
     "price": "$4000"
   },
   {
     "id": "2",
-    "img": "/images/Jaguar-F-Type.jpg",
+    "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
     "brand": "jaguar",
-    "logo": "/images/jaguar.png",
+    "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
     "model": "Jaguar F-TYPE",
     "type": "Coupe",
     "year": "2021",

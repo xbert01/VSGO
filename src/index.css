@@ -52,7 +52,6 @@ section {
 
 h1 {
   font-family: "roboto";
-  font-size: 60px;
   color: var(--white);
   margin-bottom: 30px;
   font-size: 3rem;
@@ -60,7 +59,6 @@ h1 {
 
 h2 {
   font-family: "roboto";
-  font-size: 60px;
   color: var(--red);
   font-size: 2.5rem;
 }
@@ -68,21 +66,18 @@ h2 {
 h3 {
   font-family: "roboto";
   color: var(--white);
-  font-size: 40px;
-  text-align: center;
   font-size: 2rem;
+  text-align: center;
 }
 
 h4 {
   font-family: "roboto";
-  font-size: 30px;
   color: var(--white);
   font-size: 1.5rem;
 }
 
 h5 {
   font-family: "roboto";
-  font-size: 25px;
   color: var(--white);
   font-size: 1.25rem;
 }
@@ -147,19 +142,30 @@ ul {
   height: 100%;
   z-index: -1;
 }
+.car-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
-.carRandom img {
-  width: 50px;
+.car-list-container img {
+  width: 10%;
+}
+.car-name-container {
+  padding: 0.3rem;
 }
 
 .carRandom h2 {
   color: var(--blueDark);
-  font-size: 2rem;
+  text-align: center;
 }
 
 .car-name-container h3 {
   color: var(--blueLight);
-  font-size: 1.5rem;
+  text-align: center;
 }
 
 .gameStartPage {
@@ -179,4 +185,25 @@ ul {
 }
 */
 
-/*Images*/ ;
+/*Images*/
+.demo-bg {
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.carContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
