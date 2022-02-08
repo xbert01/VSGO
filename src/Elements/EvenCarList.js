@@ -1,7 +1,7 @@
 import Cars from "../json/Cars.json";
 
 const EvenCarList = () => {
-  const even = Cars.filter((car) => car.id % 2 === 0);
+  const even = Cars.filter((car) => car.id % 2 === 0 && car.id <= 1);
   return even.map((car) => {
     return (
       <section className="carContainer">
