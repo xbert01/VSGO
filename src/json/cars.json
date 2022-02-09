@@ -22,7 +22,17 @@
   {
     "id": "2",
     "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
-    "brand": "jaguar",
+    "brand": "jaguar1",
+    "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
+    "model": "Jaguar F-TYPE",
+    "type": "Coupe",
+    "year": "2021",
+    "price": "$61.600"
+  },
+  {
+    "id": "3",
+    "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
+    "brand": "jaguar2",
     "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
     "model": "Jaguar F-TYPE",
     "type": "Coupe",
