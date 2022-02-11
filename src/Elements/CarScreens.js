@@ -8,8 +8,15 @@ const CarScreens = () => {
       <LeftCarScreen />
       <VersusBar />
       <RightCarScreen />
+
+      <Display />
     </div>
   );
 };
 
 export default CarScreens;
+
+
+
+
+

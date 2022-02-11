@@ -12,7 +12,7 @@ const EvenCarList = () => {
     <>
     {
       even.slice(0, show).map((car) => (
-    
+    <div className="carRandom">
         <section className="carContainer" >
           <img
             className="demo-bg"
@@ -27,7 +27,8 @@ const EvenCarList = () => {
             </div>
             <h2>{car.year}</h2>
           </div>
-        </section>
+          </section>
+          </div>
     
       ))
       }

@@ -7,13 +7,15 @@ const OddCarList = () => {
 
   const showNext = () => {
     setShow(show + 1);
+    console.log(show)
   };
 
-  console.log(show);
   return (
     <>
       {odd.slice(0, show).map((car) => (
+        <div className="carRandom">
         <section className='carContainer'>
+          <div>
           <img
             className='demo-bg'
             src={car.img}
@@ -26,8 +28,15 @@ const OddCarList = () => {
               <h3>{car.type}</h3>
             </div>
             <h2>{car.year}</h2>
+            </div>
           </div>
-          <button
+          </section>
+          </div>
+      ))}
+
+
+
+           <button
             onClick={showNext}
             style={{
               margin: "2em",
@@ -35,9 +44,7 @@ const OddCarList = () => {
               border: "10px solid black",
               cursor: "pointer",
             }}
-          ></button>
-        </section>
-      ))}
+          >Some Name</button>
     </>
   );
 };
