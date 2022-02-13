@@ -38,5 +38,15 @@
     "type": "Coupe",
     "year": "99999",
     "price": "$61.600"
+  },
+  {
+    "id": "4",
+    "img": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644673630/images/Volkswagen-Passat-B6_rr8wvy.jpg",
+    "brand": "Volkswagen",
+    "logo": "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644673258/images/kisspng-volkswagen-beetle-car-volkswagen-gol-volkswagen-18-istanbul-background-5b518d3c54b186.1451426715320712283469_i0zknu.jpg",
+    "model": "Passat B6",
+    "type": "Kombi",
+    "year": "2006",
+    "price": "$10.600"
   }
 ]

@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const GameStartPage = () => {
   return (
-    <div className="gameStartPage">
+    <div className='gameStartPage'>
       <Logo />
       <h1></h1>
       <p></p>
