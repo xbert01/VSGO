@@ -1,7 +1,3 @@
-const Button = () => {
-    return (
-<div></div>
-    );
-};
 
-export default Button;
+const PrimaryButton = () => {<button>lolo</button>}
+    export default PrimaryButton

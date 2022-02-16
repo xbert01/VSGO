@@ -1,40 +1,49 @@
 import React from "react";
-import { OddFile, EvenFIle } from "./EvenOdd";
-import VersusBar from "./VersusBar";
+import Buttons from "../Elements/Buttons";
+import { OddFile, EvenFIle } from "../Elements/EvenOdd";
+import VersusBar from "../Elements/VersusBar";
 
 function Display() {
-  const [skipLast, setSkipLast] = React.useState(0);
-  const [next, setShowNext] = React.useState(1);
+  //Left Container Default Cars
+  const [startLeft, setSkipLast] = React.useState(0); //Sets Min object index to be displayed in Left Container
+  const [endLeft, setShowNext] = React.useState(1); //Sets Max object index to be displayed in Left Container
 
-  const showNextData = () => {
-    setShowNext(next + 1);
-    setSkipLast(skipLast + 1);
+  //Right Container Default Cars
+  const [startRight, setSkipLastRight] = React.useState(1); //Sets Min object index to be displayed in Right Container
+  const [endRight, setShowNextRight] = React.useState(2); //Sets Max object index to be displayed in Right Container
+
+
+  const showNextData = () => { //Function displays Next Object from an Array-Cars(Next Car)
+    //Left Container Next Car
+    setSkipLast(startLeft + 1);
+    setShowNext(endLeft + 1);
+
+    //Right Container Next Car
+    setSkipLastRight(startRight + 1);
+    setShowNextRight(endRight + 1);
   };
 
-  const evenData = CarData.filter(
-    (car) => car.id % 2 === 0
-  );
+  
 
-  const oddData = CarData.filter((car) => car.id % 2 !== 0);
+  // const evenData = CarData.filter(
+  //   (car) => car.id % 2 === 0
+  // );
+
+  // const oddData = CarData.filter((car) => car.id % 2 !== 0);
 
   return (
     <>
       <div className='carScreens'>
         <div className='carRandom'>
-          {EvenFIle(evenData.slice(skipLast, next))}
+          {EvenFIle(CarData.slice(startLeft, endLeft))}
         </div>
         <VersusBar />
         <div className='carRandom'>
-          {OddFile(oddData.slice(skipLast, next))}
+          {OddFile(CarData.slice(startRight, endRight))}
         </div>
       </div>
       <button
-        style={{
-          margin: "2em",
-          padding: "2em",
-          border: "10px solid black",
-          cursor: "pointer",
-        }}
+        className='button button-higher'
         onClick={() => showNextData()}
       >
         Next
@@ -76,15 +85,14 @@ const CarData = [
   },
   {
     id: 3,
-    img: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
-    brand: "jaguar2",
-    logo: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
-    model: "Jaguar F-TYPE",
+    img: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644703910/images/tesla3_ybcqn5.png",
+    brand: "Tesla",
+    logo: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644704202/images/tesla_qwq64o.png",
+    model: "Tesla Model-3",
     type: "Coupe",
-    year: "22222",
-    price: "$61.600",
+    year: "2021",
+    price: "$40.000",
   },
-  ,
   {
     id: 4,
     img: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644673630/images/Volkswagen-Passat-B6_rr8wvy.jpg",
@@ -94,26 +102,6 @@ const CarData = [
     type: "Kombi",
     year: "2006",
     price: "$10.600",
-  },
-  {
-    id: 5,
-    img: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
-    brand: "jaguar2",
-    logo: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
-    model: "Jaguar F-TYPE",
-    type: "Coupe",
-    year: "44444",
-    price: "$61.600",
-  },
-  {
-    id: 6,
-    img: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/Jaguar-F-Type_q7ziqx.jpg",
-    brand: "jaguar2",
-    logo: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
-    model: "Jaguar F-TYPE",
-    type: "Coupe",
-    year: "55555",
-    price: "$61.600",
   },
 ];
 

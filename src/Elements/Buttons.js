@@ -1,11 +1,9 @@
 const Buttons = () => {
   return (
         <div className="button-bar">
-            <div className="button-wrapper">
-              <button className="button-higher"></button>
-              <button className="button-even"></button>
-              <button className="button-lower"></button>
-            </div>
+              <button className="button button-higher">Higher</button>
+              <button className="button button-even">Even</button>
+              <button className="button button-lower">Lower</button>
         </div>
   );
 };
