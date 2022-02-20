@@ -1,2 +1,17 @@
-.gameOverContainer {
+.gameOverPage {
+  min-height: 100vh;
+  background-image: var(--backgroundImg);
+  object-fit: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
+
+.gameOverPage img{
+  width: 10em;
+  margin: 1em;
+}
+
