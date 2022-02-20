@@ -1,9 +1,9 @@
 /* Fonts */
 @font-face {
-  font-family: "roboto";
-  /*src:*/
   font-weight: normal;
   font-style: normal;
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Quantico', sans-serif;
 }
 
 *,
@@ -18,17 +18,21 @@
 
 /* --- root variables --- */
 :root {
-  --blueDark: #5E3888;
-  --blueLight: #006aa3;
+  --blueDark: #0D1C81;
+  --blueLight: #1c84ad;
+  --magenta: #d323bb;
   --white: #f0faf2;
-  --background: #F4EEE8;
-  --font-family: "roboto", sans-serif;
+  --grey: #b9b9b9;
+  --background: #f4eee8;
+  --font-family: 'Orbitron', sans-serif;
+  --headFont: 'Orbitron', sans-serif;
+  --backgroundImg: url("https://res.cloudinary.com/efer/image/upload/v1645261184/CarCompare/abstract-bcg_tismwh.png");
 }
 
 /*General styling*/
 html {
   color: var(--white);
-  font-family: var(--font-family);
+  font-family: var(--headFont);
   height: 100%;
   width: 100%;
   margin: 0px;
@@ -50,39 +54,38 @@ section {
 }
 
 h1 {
-  font-family: "roboto";
+  font-family: var(--headFont);
   color: var(--white);
-  margin-bottom: 30px;
   font-size: 3rem;
 }
 
 h2 {
-  font-family: "roboto";
+  font-family: var(--headFont);
   color: var(--red);
   font-size: 2.5rem;
 }
 
 h3 {
-  font-family: "roboto";
+  font-family: var(--headFont);
   color: var(--white);
   font-size: 2rem;
   text-align: center;
 }
 
 h4 {
-  font-family: "roboto";
+  font-family: var(--headFont);
   color: var(--white);
   font-size: 1.5rem;
 }
 
 h5 {
-  font-family: "roboto";
+  font-family: var(--headFont);
   color: var(--white);
   font-size: 1.25rem;
 }
 
 p {
-  font-family: "roboto";
+  font-family: var(--headFont);
   max-width: 600px;
   color: var(--white);
   font-size: 1rem;
@@ -101,35 +104,37 @@ ul {
 }
 
 .versus-bar {
-  align-items: center;
   display: flex;
-  height: 30rem;
+  align-items: center;
   justify-content: center;
-  left: calc(50% - 2rem);
+  min-height: 100%;
+  width: 5em;
   opacity: 1;
-  position: absolute;
+  position: relative;
 }
 
-.versus-bar::before {
+.versus-bar .vs-line {
   background-color: var(--blueDark);
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 6px;
+  width: 2em;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vs {
+.vs-sign {
   background-color: var(--blueDark);
-  border-radius: 15px;
+  position: relative;
+  border-radius: 10px;
+  transform: rotate(45deg);
   color: white;
-  width: 4rem;
-  padding: 0.3rem;
+  width: 4em;
+  height: 4em;
   z-index: 0;
 }
 
-.vs h3 {
-  font-size: 1rem;
+.vs-sign img {
+  transform: rotate(-45deg);
 }
 
 .carRandom {
@@ -144,7 +149,7 @@ ul {
 
 .carRandom .carContainer {
   width: 100%;
-  height: 100%;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,6 +170,7 @@ ul {
 .car-list-container img {
   width: 10%;
 }
+
 .car-name-container {
   padding: 0.3rem;
 }
@@ -179,83 +185,6 @@ ul {
   text-align: center;
 }
 
-.gameStartPage {
-}
-
-.gameOverContainer {
-}
-
-/*BUTTONS*/
-.button-bar {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} 
-
-.button {
-  align-items: center;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-}
-
-
-.button-higher { 
-  background: #0aa724;
-  box-shadow: #06880d6c 0 10px 20px -10px;
-  color: #FFFFFF;
-}
-
-.button-higher:hover,
-.button-higher:focus { 
-  background-color: #1f8a1f;
-}
-
-.button-higher:active {
-  background: #066129;
-}
-
-.button-higher:disabled { 
-  cursor: not-allowed;
-  background: rgba(9, 100, 36, 0.733);
-}
-
-.button-even { 
-  background: #f0c713;
-  box-shadow: #b69b05a6 0 10px 20px -10px;
-  color: #FFFFFF;
-}
-
-.button-lower { 
-  background: #b60303;
-  box-shadow: #970606d2 0 10px 20px -10px;
-  color: #FFFFFF;
-}
-
-
 /*Images*/
 .demo-bg {
   opacity: 0.6;
@@ -266,4 +195,16 @@ ul {
   padding: 0;
   object-fit: cover;
   z-index: -2;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .carScreens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 30rem;
+    position: relative;
+  }
+  
 }

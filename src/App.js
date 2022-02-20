@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Game from "./Pages/Game";
-import GameOverPage from "./Pages/GameOverPage";
-import GameStartPage from "./Pages/GameStartPage";
+import GameOverPage from "./Pages/GameOverPage/GameOverPage";
+import GameStartPage from "./Pages/GameStartPage/GameStartPage";
+
 
 const App = () => {
   return (

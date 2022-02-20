@@ -1,4 +1,4 @@
-const showData = (data, showNext) => (
+const showData = (data) => (
   <>
     {data.map((car, index) => (
       <div className='carContainer' key={index + 1}>
@@ -19,5 +19,5 @@ const showData = (data, showNext) => (
     ))}
   </>
 );
-export const OddFile = (data) => <>{showData(data)}</>;
+
 export const EvenFIle = (data) => <>{showData(data)}</>;

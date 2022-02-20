@@ -1,0 +1,133 @@
+
+.button-bar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  align-items: center;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans",
+    Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right:20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s
+      cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+
+.button-start {
+  background: #d323bb;
+  box-shadow: #a51c93 0 10px 20px -10px;
+  color: #ffffff;
+  width: 10em;
+  height: 3em;
+}
+
+.button-start:hover,
+.button-start:focus {
+  background-color: #a51c93;
+}
+
+.button-start:active {
+  background: #8f197f;
+}
+
+.button-start:disabled {
+  cursor: not-allowed;
+  background: #811773;
+}
+
+
+.button-higher {
+  background: #0aa724;
+  box-shadow: #06880d6c 0 10px 20px -10px;
+  color: #ffffff;
+}
+
+.button-higher:hover,
+.button-higher:focus {
+  background-color: #1f8a1f;
+}
+
+.button-higher:active {
+  background: #066129;
+}
+
+.button-higher:disabled {
+  cursor: not-allowed;
+  background: rgba(9, 100, 36, 0.733);
+}
+
+.button-even {
+  background: #f0c713;
+  box-shadow: #b69b05a6 0 10px 20px -10px;
+  color: #ffffff;
+}
+
+.button-even:hover,
+.button-even:focus {
+  background-color: #ccaa15;
+}
+
+.button-even:active {
+  background: #ccaa15;
+}
+
+.button-even:disabled {
+  cursor: not-allowed;
+  background: #ccaa15;
+}
+
+.button-lower {
+  background: #b60303;
+  box-shadow: #970606d2 0 10px 20px -10px;
+  color: #ffffff;
+}
+
+.button-lower:hover,
+.button-lower:focus {
+  background-color: #940a0a;
+}
+
+.button-lower:active {
+  background: #810909;
+}
+
+.button-lower:disabled {
+  cursor: not-allowed;
+  background: #810909;
+}
+
+@media only screen and (max-width: 800px) {
+.button-start{
+  width: 8em;
+  height: 2.5em;
+}
+}

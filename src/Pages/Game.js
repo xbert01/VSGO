@@ -1,5 +1,3 @@
-import Buttons from "../Elements/Buttons";
-import GameOverPage from "./GameOverPage";
 import Display from "./Display";
 import Nav from "../Elements/Nav";
 
