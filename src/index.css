@@ -100,6 +100,8 @@ ul {
   display: flex;
   width: 100%;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .versus-bar {
@@ -109,7 +111,7 @@ ul {
   min-height: 100%;
   width: 5em;
   opacity: 1;
-  position: relative;
+  position: absolute;
 }
 
 .versus-bar .vs-line {
@@ -203,12 +205,11 @@ ul {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 30rem;
     position: relative;
   }
 
   .carRandom .carContainer {
-    min-height: 30vh;
+    min-height: 35vh;
   }
   .versus-bar {
     width: 100%;

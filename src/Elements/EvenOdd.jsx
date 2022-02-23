@@ -20,4 +20,4 @@ const showData = (data) => (
   </>
 );
 
-export const EvenFIle = (data) => <>{showData(data)}</>;
+export const EvenFile = (data) => <>{showData(data)}</>;
