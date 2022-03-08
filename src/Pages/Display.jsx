@@ -7,13 +7,19 @@ import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 
 function Display() {
-  //Left Container Default Cgifyars
-  const [startLeft, setSkipLast] = React.useState(0); //Sets Min object index to be displayed in Left Container
-  const [endLeft, setShowNext] = React.useState(1); //Sets Max object index to be displayed in Left Container
-
+  //Left Container Default Cars
+  let [startLeft, setSkipLast] = React.useState(0); //Sets Min object index to be displayed in Left Container
+  let [endLeft, setShowNext] = React.useState(1); //Sets Max object index to be displayed in Left Container
   //Right Container Default Cars
-  const [startRight, setSkipLastRight] = React.useState(1); //Sets Min object index to be displayed in Right Container
-  const [endRight, setShowNextRight] = React.useState(2); //Sets Max object index to be displayed in Right Container
+  let [startRight, setSkipLastRight] = React.useState(1); //Sets Min object index to be displayed in Right Container
+  let [endRight, setShowNextRight] = React.useState(2); //Sets Max object index to be displayed in Right Container
+
+  const BackToStart = () => {
+    startLeft= (-1);
+    endLeft = (0);
+    startRight = (0);
+    endRight = (1);
+  }
 
   const showNextData = () => {
     //Function displays Next Object from an Array-Cars(Next Car)
@@ -25,22 +31,25 @@ function Display() {
     setSkipLastRight(startRight + 1);
     setShowNextRight(endRight + 1);
   };
-  let counter = 0;
 
-  function goToGameOverPage() {
-    // location.href = "https://www.youtube.com/watch?v=3_t4obUc51A&ab_channel=AcademyofIdeas";
-  };
+let rightValue = 2;
+let leftValue = 2;
+let counter = 0;
+function goToGameOverPage() {
+      // location.href = "https://www.youtube.com/watch?v=3_t4obUc51A&ab_channel=AcademyofIdeas";
+  console.log("they are the same");
+};
 
-  function isEven() {
-    if (EvenFile((CarData.slice(startLeft, endLeft))).id < (EmptyFile(CarData.price).id)) {
-      ++counter;
-      console.log(counter);
-      showNextData();
-    }
-    else goToGameOverPage();
-    return counter;
-  }
+function Equal() {
+      if (rightValue = leftValue) {
+            ++counter;
+            console.log(counter);
+      }
+      else goToGameOverPage();
+      return counter;
+}
 
+  // Function shuffles order of the array
   const setShuffle = (r) => {
     for (let i = r.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -50,9 +59,11 @@ function Display() {
     }
     return r;
   };
+  const Reshuffled = () => {
+    setShuffle(CarData);
+  };
 
-  console.log(setShuffle(CarData));
-
+  // Refreshing function restarts the game
   function refreshPage() {
     window.location.reload();
   }
@@ -62,35 +73,28 @@ function Display() {
       <div className='carScreens'>
         <Buttons />
         <div className='carRandom'>
-          {EvenFile(setShuffle(CarData).slice(startLeft, endLeft))}
+          {EvenFile(CarData.slice(startLeft, endLeft))}
         </div>
         <VersusBar />
         <div className='carRandom'>
-          {EmptyFile(setShuffle(CarData).slice(startRight, endRight))}
+          {EmptyFile(CarData.slice(startRight, endRight))}
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center", minHeight: "15vh", backgroundColor: "var(--blueDark)" }}>
-        <button
-          className='button button-higher'
-          onClick={() => showNextData()}
-        >
-          Next
-        </button>
-
-        <button
-          className='button button-lower'
-          onClick={() => refreshPage()}
-        >
-          Restart Game
-        </button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          minHeight: "15vh",
+          backgroundColor: "var(--blueDark)",
+        }}
+      >
+        <button className='button button-lower'  onClick={() => Reshuffled() & BackToStart()}>Restart Game</button>
+        <button className='button button-higher' onClick={() => showNextData()}>Next</button>
+        <button className='button button-even' onClick={() => Equal()}>Equal</button>
       </div>
-
-      {/* <Shuffle /> */}
     </>
   );
 }
 
 export default Display;
-
-
