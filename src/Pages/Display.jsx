@@ -14,12 +14,14 @@ function Display() {
   let [startRight, setSkipLastRight] = React.useState(1); //Sets Min object index to be displayed in Right Container
   let [endRight, setShowNextRight] = React.useState(2); //Sets Max object index to be displayed in Right Container
 
-  const BackToStart = () => {
-    startLeft= (-1);
-    endLeft = (0);
-    startRight = (0);
-    endRight = (1);
-  }
+  // const BackToStart = () => {
+  //   return (
+  //     (startLeft = -1),
+  //     (endLeft = 0),
+  //     (startRight = 0),
+  //     (endRight = 1)
+  //   );
+  // };
 
   const showNextData = () => {
     //Function displays Next Object from an Array-Cars(Next Car)
@@ -32,22 +34,21 @@ function Display() {
     setShowNextRight(endRight + 1);
   };
 
-let rightValue = 2;
-let leftValue = 2;
-let counter = 0;
-function goToGameOverPage() {
-      // location.href = "https://www.youtube.com/watch?v=3_t4obUc51A&ab_channel=AcademyofIdeas";
-  console.log("they are the same");
-};
+  let rightValue = 2;
+  let leftValue = 2;
+  let counter = 0;
 
-function Equal() {
-      if (rightValue = leftValue) {
-            ++counter;
-            console.log(counter);
-      }
-      else goToGameOverPage();
-      return counter;
-}
+  function goToGameOverPage() {
+    console.log("they are not the same");
+  }
+
+  function Equal() {
+    if (leftValue == rightValue) {
+      ++counter;
+      console.log(counter);
+    } else goToGameOverPage();
+    return counter;
+  }
 
   // Function shuffles order of the array
   const setShuffle = (r) => {
@@ -60,24 +61,39 @@ function Equal() {
     return r;
   };
   const Reshuffled = () => {
-    setShuffle(CarData);
+    return setShuffle(CarData);
   };
+
+  // setShuffle(CarData);
+  Reshuffled();
 
   // Refreshing function restarts the game
   function refreshPage() {
     window.location.reload();
   }
+  const leftData = () => {
+    const a = CarData.slice(startLeft, endLeft);
+    return a;
+  };
 
+  const rightData = () => {
+    const b = CarData.slice(startRight, endRight);
+    return b;
+  };
+
+  console.log(leftData().price);
+
+  console.log(setShuffle(CarData));
   return (
     <>
       <div className='carScreens'>
         <Buttons />
         <div className='carRandom'>
-          {EvenFile(CarData.slice(startLeft, endLeft))}
+          {EvenFile(leftData())}
         </div>
         <VersusBar />
         <div className='carRandom'>
-          {EmptyFile(CarData.slice(startRight, endRight))}
+          {EmptyFile(rightData())}
         </div>
       </div>
 
@@ -89,9 +105,26 @@ function Equal() {
           backgroundColor: "var(--blueDark)",
         }}
       >
-        <button className='button button-lower'  onClick={() => Reshuffled() & BackToStart()}>Restart Game</button>
-        <button className='button button-higher' onClick={() => showNextData()}>Next</button>
-        <button className='button button-even' onClick={() => Equal()}>Equal</button>
+        {/* <button
+          className='button button-lower'
+          onClick={() =>
+            BackToStart() & console.log(BackToStart())
+          }
+        >
+          Restart Game
+        </button> */}
+        <button
+          className='button button-higher'
+          onClick={() => showNextData()}
+        >
+          Next
+        </button>
+        <button
+          className='button button-even'
+          onClick={() => Equal()}
+        >
+          Equal
+        </button>
       </div>
     </>
   );
