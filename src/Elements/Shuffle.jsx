@@ -12,13 +12,15 @@ const Shuffle = () => {
     }
     return r;
   };
-  console.log(setShuffle(CarData));
-  
+  const Reshuffled = (r) => {
+    return setShuffle(r);
+  };
+  Reshuffled(CarData);
   return (
     <>
       <button
         className='button button-higher'
-        onClick={() => setShuffle(CarData)}
+        onClick={() => Reshuffled(CarData)}
       >
         Refresh
       </button>

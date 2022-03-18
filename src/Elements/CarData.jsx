@@ -7,7 +7,7 @@ const CarData = [
     model: "Mercedes-AMG GT",
     type: "Coupe",
     year: "2021",
-    price: "$118.600",
+    price: "5000",
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ const CarData = [
     model: "Fiat 126p",
     type: "Bestia",
     year: "1973",
-    price: "$4000",
+    price: "4000",
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const CarData = [
     logo: "https://res.cloudinary.com/dnhgorvn3/image/upload/v1644074893/images/jaguar_v3fl5l.png",
     model: "Jaguar F-TYPE",
     type: "Coupe",
-    year: "11111",
-    price: "$61.600",
+    year: "2021",
+    price: "61600",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const CarData = [
     model: "Tesla Model-3",
     type: "Coupe",
     year: "2021",
-    price: "$40.000",
+    price: "40000",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const CarData = [
     model: "Passat B6",
     type: "Kombi",
     year: "2006",
-    price: "$10.600",
+    price: "10600",
   },
 ];
 

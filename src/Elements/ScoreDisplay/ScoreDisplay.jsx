@@ -1,7 +1,7 @@
-const ScoreDisplay = () => {
+const ScoreDisplay = ({counter}) => {
     return(
     <div style={{textAlign: "center"}}>
-    <p>SCORE:</p>
+            <h3>SCORE:{counter}</h3>
     </div>
         )
 }

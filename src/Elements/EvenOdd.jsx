@@ -14,6 +14,7 @@ const showData = (data) => (
             <h3>{car.type}</h3>
           </div>
           <h2>{car.year}</h2>
+          <h2>${car.price}</h2>
         </div>
       </div>
     ))}
