@@ -20,8 +20,8 @@ function Display() {
     }
     return r;
   };
-  const Reshuffled = (a) => {
-    return setShuffle(a);
+  const Reshuffled = (r) => {
+    return setShuffle(r);
   };
   console.log(CarData);
   Reshuffled(CarData);
