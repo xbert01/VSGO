@@ -11,19 +11,20 @@ import { EmptyFile } from "../Elements/EmptyFile";
 
 function Display() {
 
-  // const setShuffle = (r) => {
-  //   for (let i = r.length - 1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * (i + 1));
-  //     const temp = r[i];
-  //     r[i] = r[j];
-  //     r[j] = temp;
-  //   }
-  //   return r;
-  // };
-  // const Reshuffled = () => {
-  //   return setShuffle(CarData);
-  // };
-  // Reshuffled();
+  const setShuffle = (r) => {
+    for (let i = r.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = r[i];
+      r[i] = r[j];
+      r[j] = temp;
+    }
+    return r;
+  };
+  const Reshuffled = (a) => {
+    return setShuffle(a);
+  };
+  console.log(CarData);
+  Reshuffled(CarData);
   
   
   
@@ -42,6 +43,20 @@ function Display() {
      CarData.shift();
      console.log(CarData)
   } 
+
+
+
+
+  function goToGameOverPage() {
+    console.log("they are not the same");
+  }
+  function Equal() {
+    if ((c[0].year) === (d[1].year)) {
+      ++counter;
+      console.log(counter);
+    } else goToGameOverPage();
+    return counter;
+  }
 
   return (
     <>
@@ -64,17 +79,23 @@ function Display() {
           backgroundColor: "var(--blueDark)",
         }}
       >
-         {/* <button
+         <button
           className='button button-higher'
-          onClick={() => showNextData()}
+          onClick={() => Reshuffled()}
         >
-          Next
-        </button> */}
+          Reshuffle
+        </button>
         <button
           className='button button-even'
-          onClick={() => removeFirst()}
+          onClick={() => Equal()}
         >
           Equal
+        </button>
+            <button
+          className='button button-lower'
+          onClick={() => removeFirst()}
+        >
+          Remove first
         </button>
       </div>
     </>
