@@ -46,17 +46,33 @@ function Display() {
 
 
 
-
   function goToGameOverPage() {
     console.log("they are not the same");
   }
-  function Equal() {
-    if ((c[0].year) === (d[1].year)) {
+
+
+  function isHigher() {
+    if ((c[0].year) < (d[1].year)) {
       ++counter;
       console.log(counter);
     } else goToGameOverPage();
     return counter;
   }
+  function isEqual() {
+    if ((c[0].year) == (d[1].year)) {
+      ++counter;
+      console.log(counter);
+    } else goToGameOverPage();
+    return counter;
+  }
+ function isLower() {
+    if ((c[0].year) > (d[1].year)) {
+      ++counter;
+      console.log(counter);
+    } else goToGameOverPage();
+    return counter;
+  }
+
 
   return (
     <>
@@ -78,7 +94,7 @@ function Display() {
           minHeight: "15vh",
           backgroundColor: "var(--blueDark)",
         }}
-      >
+        >
          <button
           className='button button-higher'
           onClick={() => Reshuffled()}
@@ -87,16 +103,30 @@ function Display() {
         </button>
         <button
           className='button button-even'
-          onClick={() => Equal()}
+          onClick={() => removeFirst()}
         >
-          Equal
+          Remove First Object
         </button>
             <button
           className='button button-lower'
-          onClick={() => removeFirst()}
+          onClick={() => isLower()}
         >
-          Remove first
+          Lower
         </button>
+
+        <button
+          className='button button-even'
+          onClick={() => isEqual()}
+        >
+          Even
+        </button>
+        <button
+          className='button button-higher'
+          onClick={() => isHigher()}
+        >
+          Higher
+        </button>
+
       </div>
     </>
   );
