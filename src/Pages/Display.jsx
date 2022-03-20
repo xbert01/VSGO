@@ -28,14 +28,14 @@ function Display() {
     localStorage.setItem("recentScore", counter + 1);
   }
   const highScore = JSON.parse(localStorage.getItem("highScore"));
-  console.log(highScore)
+  console.log(highScore);
 
 
 
   function goToGameOverPage() {
     // alert("You fucked up, boy");
     // console.log("You fucked up, boy");
-    window.location.href = "/gameover";
+    return window.location.href = "/gameover";
   }
   function isHigher() {
     if (leftCarData < rightCarData) {

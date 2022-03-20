@@ -1,8 +1,8 @@
 import "./GameOverPage.css";
-import ScoreDisplay from "../../Elements/ScoreDisplay/ScoreDisplay";
+import ScoreDisplay from "../../Elements/ScoreDisplay/ScoreDisplay.jsx";
 import RandomMessage from "../../Elements/RandomMessage/RandomMessage";
 import ScoreLogic from "../../Elements/ScoreLogic/ScoreLogic";
-import { resetScore } from "../../Elements/ScoreLogic/ScoreLogic";
+import { resetScore } from "../../Elements/ScoreLogic/ScoreLogic.jsx";
 import Shuffle from "../../Elements/Shuffle";
 
 const GameOverPage = () => {

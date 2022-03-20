@@ -8,9 +8,10 @@ const ScoreLogic = () => {
         }
     }
     noPoints();
-    
+    localStorage.clear();
     const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
     const score = { score: getRecentScore };
+    //const highScoreArr = Object.entries(highScore);
     highScore.push(score);
     highScore.sort((a, b) => b.score - a.score);
     highScore.splice(1);
