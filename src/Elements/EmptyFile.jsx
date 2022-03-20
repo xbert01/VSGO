@@ -11,10 +11,9 @@ const showEmptyFile = (data) => (
           <img src={car.logo} alt='car-logo' />
           <div className='car-name-container'>
             <h3>{car.model}</h3>
-            <h3>{car.type}</h3>
           </div>
           <h2>{car.year}</h2>
-          <h1>Guess the price</h1>
+          <h1>Guess Max Speed</h1>
         </div>
       </div>
     ))}

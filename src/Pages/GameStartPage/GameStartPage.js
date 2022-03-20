@@ -3,6 +3,9 @@ import Logo from "../../Elements/Logo";
 import { Link } from "react-router-dom";
 import "./GameStartPage.css";
 import CategoryBar from "../../Elements/CategoryBar/CategoryBar";
+import Shuffle from "../../Elements/Shuffle";
+
+
 
 
 const GameStartPage = () => {
@@ -15,9 +18,10 @@ const GameStartPage = () => {
       {/* <PrimaryButton /> // Start Button */}
       <CategoryBar />
         <a href="/game">
-            <button style={{}} className='button button-start'>
+            <button style={{}} className='button button-start' >
             Start Game
-            </button>
+        </button>
+        {/* <Shuffle /> */}
         </a>
       {/* </Link> */}
     </div>

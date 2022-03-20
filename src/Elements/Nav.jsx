@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 // import {Score} from "../Elements/Buttons/Buttons"
 
-const Nav = ({score}) => {
+const Nav = ({score, highScore}) => {
   return (
     <>
       <div style={{display: "flex", justifyContent: "center", backgroundColor: "var(--blueDark)", color: "white", padding:"1em",}}>
@@ -27,7 +27,7 @@ const Nav = ({score}) => {
 
         <div style={{width: "50%", height: "100%", marginRight: "2rem", display: "flex", justifyContent: "flex-end"}}>
           <p style={{ padding: "1rem" }}>HIGHSCORE:</p>
-          <p style={{ padding: "1rem 0", color:"var(--magenta)" }}>45</p>
+          <p style={{ padding: "1rem 0", color: "var(--magenta)" }}>{highScore}</p>
         </div>
 
       </div>

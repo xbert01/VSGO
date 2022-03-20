@@ -16,6 +16,7 @@ const Shuffle = () => {
     return setShuffle(r);
   };
   Reshuffled(CarData);
+
   return (
     <>
       <button

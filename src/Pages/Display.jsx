@@ -1,53 +1,56 @@
 import React from "react";
 import Buttons from "../Elements/Buttons/Buttons";
-import {EvenFile } from "../Elements/EvenOdd";
+import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
 import Shuffle from "../Elements/Shuffle";
 import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
-import {useState } from 'react'
-
-
-
+import { useState } from "react";
+// import { getHighScore } from "../Elements/ScoreLogic/ScoreLogic"
 
 function Display() {
-  
   function Next() {
     CarData.shift();
-  } 
+  }
 
   let leftCar = CarData.slice(0, 1);
   let rightCar = CarData.slice(1, 2);
-    
-  let leftCarData = leftCar[0].price;
-  let rightCarData = rightCar[0].price;
+
+  let leftCarData = leftCar[0].speed;
+  let rightCarData = rightCar[0].speed;
 
 
-  const [counter, setCount] = useState(0)
+  
+  const [counter, setCount] = useState(0);
   function count() {
-  setCount(counter + 1)
-}
+    setCount(counter + 1);
+    localStorage.setItem("recentScore", counter + 1);
+  }
+  const highScore = JSON.parse(localStorage.getItem("highScore"));
+  console.log(highScore)
+
+
 
   function goToGameOverPage() {
     // alert("You fucked up, boy");
-    console.log("You fucked up, boy");
-    // window.location.href = "/gameover";
+    // console.log("You fucked up, boy");
+    window.location.href = "/gameover";
   }
   function isHigher() {
-    if ((leftCarData) < (rightCarData)) {
+    if (leftCarData < rightCarData) {
       count();
       Next();
     } else goToGameOverPage();
   }
   function isEven() {
-    if ((leftCarData) == (rightCarData)) {
+    if (leftCarData == rightCarData) {
       count();
       Next();
     } else goToGameOverPage();
   }
- function isLower() {
-    if ((leftCarData) > (rightCarData)) {
+  function isLower() {
+    if (leftCarData > rightCarData) {
       count();
       Next();
     } else goToGameOverPage();
@@ -55,18 +58,16 @@ function Display() {
 
   return (
     <>
-      <Nav score={counter}/>
+      <Nav score={counter} highScore={highScore} />
       <div className='carScreens'>
-        <Buttons />
-        <div className='carRandom'>
-          {EvenFile(leftCar)}
-        </div>
+        {/* <Buttons a={isHigher()} /> */}
+        <div className='carRandom'>{EvenFile(leftCar)}</div>
         <VersusBar />
         <div className='carRandom'>
           {EmptyFile(rightCar)}
         </div>
       </div>
- 
+
       <div
         style={{
           display: "flex",
@@ -74,30 +75,31 @@ function Display() {
           minHeight: "15vh",
           backgroundColor: "var(--blueDark)",
         }}
-        >
-
-        <button
-          className='button button-lower'
-          onClick={() => isLower()}
-        >
-          Lower
-        </button>
-        <button
-          className='button button-even'
-          onClick={() => isEven()}
-        >
-          Even
-        </button>
-        <button
-          className='button button-higher'
-          onClick={() => isHigher()}
-        >
-          Higher
-        </button>
-
-      {/* <Shuffle /> */}
-
-
+      >
+        <div id="movies" className='button-bar'>
+          <button
+            onClick={() => isHigher()}
+            className='button button-higher'
+            style={{ marginBottom: "0.5em" }}
+          >
+            Higher
+          </button>
+          <button
+            onClick={() => isEven()}
+            className='button button-even'
+            style={{ marginBottom: "0.5em" }}
+          >
+            Even
+          </button>
+          <button
+            onClick={() => isLower()}
+            className='button button-lower'
+            style={{ marginBottom: "0.5em" }}
+          >
+            Lower
+          </button>
+        </div>
+        {/* <Shuffle /> */}
       </div>
     </>
   );

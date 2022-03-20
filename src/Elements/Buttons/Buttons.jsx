@@ -1,30 +1,31 @@
 import "./Buttons.css";
-// import CarData from "../Elements/CarData";
+import CarData from "../CarData";
+import { useState } from "react";
 
-const Buttons = (a, b, c) => {
+const Buttons = () => {
   return (
     <div className='button-bar'>
-      <button
-        onClick={() => a}
+      {/* <button
+        onClick={() => isHigher()}
         className='button button-higher'
         style={{ marginBottom: "0.5em" }}
       >
         Higher
       </button>
       <button
-        onClick={() => b}
+        onClick={() => isEven()}
         className='button button-even'
         style={{ marginBottom: "0.5em" }}
       >
         Even
       </button>
       <button
-        onClick={() => c}
+        onClick={() => isLower()}
         className='button button-lower'
         style={{ marginBottom: "0.5em" }}
       >
         Lower
-      </button>
+      </button> */}
     </div>
   );
 };
