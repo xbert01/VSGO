@@ -26,7 +26,9 @@ const GameOverPage = () => {
           <button
             style={{ margin: "0 1em" }}
             className='button button-start'
-            onClick={() => {resetScore()}}
+            onClick={() => {
+              resetScore();
+            }}
           >
             Play again
           </button>
@@ -35,7 +37,9 @@ const GameOverPage = () => {
           <button
             style={{ margin: "0 1em" }}
             className='button button-start'
-            onClick={() => {resetScore()}}
+            onClick={() => {
+              resetScore();
+            }}
           >
             Change category
           </button>

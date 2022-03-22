@@ -1,36 +1,51 @@
 const ScoreLogic = () => {
+  const getRecentScore =
+    localStorage.getItem("recentScore");
 
-  const getRecentScore = localStorage.getItem("recentScore");
-  
-  function noPoints () {
-      if (getRecentScore == null) {
-          localStorage.setItem("recentScore", 0);
-        }
-    }
-    noPoints();
-    localStorage.clear();
-    const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
-    const score = { score: getRecentScore };
-    //const highScoreArr = Object.entries(highScore);
-    highScore.push(score);
-    highScore.sort((a, b) => b.score - a.score);
-    highScore.splice(1);
-    localStorage.setItem("highScore", JSON.stringify(highScore[0].score));
-    const getHighScore = localStorage.getItem("highScore");
-    
-    return (
-        <>
-            <h1 id='finalScore'>{getRecentScore}</h1>
-            <h1 id='finalScore'>{getHighScore}</h1>
-        </>
-    )
+  const highScore =
+    JSON.parse(localStorage.getItem("highScore")) || [];
+  const score = { score: getRecentScore };
+  highScore.push(score);
+  highScore.sort((a, b) => b.score - a.score);
+  highScore.splice(1);
+  localStorage.setItem(
+    "highScore",
+    JSON.stringify(highScore)
+  );
+  const getHighScore = localStorage
+    .getItem("highScore")
+    .replace(/\D/g, "");
+
+  return (
+    <>
+      <h1 id='finalScore'>{getRecentScore}</h1>
+      <h1 id='finalScore'>{getHighScore}</h1>
+    </>
+  );
 };
 function resetScore() {
-   localStorage.setItem("recentScore", 0);
-   localStorage.setItem("highScore", 0);
+  localStorage.setItem("recentScore", 0);
 }
 
-export { resetScore}
+const getRecentScore = localStorage.getItem("recentScore");
+
+const getHighScore = localStorage.getItem("highScore");
+//   .replace(/\D/g, "");
+
+function noPoints() {
+  if (getRecentScore == null) {
+    localStorage.setItem("recentScore", 0);
+  }
+  if (getHighScore == null) {
+    localStorage.setItem("highScore", 0);
+  }
+}
+noPoints();
+
+export {
+  resetScore,
+  noPoints,
+  getRecentScore,
+  getHighScore,
+};
 export default ScoreLogic;
-
-

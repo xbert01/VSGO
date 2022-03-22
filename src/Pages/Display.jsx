@@ -7,9 +7,11 @@ import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState } from "react";
-// import { getHighScore } from "../Elements/ScoreLogic/ScoreLogic"
+import { noPoints } from "../Elements/ScoreLogic/ScoreLogic";
+import { getHighScore } from "../Elements/ScoreLogic/ScoreLogic";
 
 function Display() {
+  noPoints();
   function Next() {
     CarData.shift();
   }
@@ -20,22 +22,16 @@ function Display() {
   let leftCarData = leftCar[0].speed;
   let rightCarData = rightCar[0].speed;
 
-
-  
   const [counter, setCount] = useState(0);
   function count() {
     setCount(counter + 1);
     localStorage.setItem("recentScore", counter + 1);
   }
-  const highScore = JSON.parse(localStorage.getItem("highScore"));
-  console.log(highScore);
-
-
 
   function goToGameOverPage() {
     // alert("You fucked up, boy");
     // console.log("You fucked up, boy");
-    return window.location.href = "/gameover";
+    return (window.location.href = "/gameover");
   }
   function isHigher() {
     if (leftCarData < rightCarData) {
@@ -58,7 +54,7 @@ function Display() {
 
   return (
     <>
-      <Nav score={counter} highScore={highScore} />
+      <Nav score={counter} high={getHighScore} />
       <div className='carScreens'>
         {/* <Buttons a={isHigher()} /> */}
         <div className='carRandom'>{EvenFile(leftCar)}</div>
@@ -76,7 +72,7 @@ function Display() {
           backgroundColor: "var(--blueDark)",
         }}
       >
-        <div id="movies" className='button-bar'>
+        <div id='movies' className='button-bar'>
           <button
             onClick={() => isHigher()}
             className='button button-higher'
