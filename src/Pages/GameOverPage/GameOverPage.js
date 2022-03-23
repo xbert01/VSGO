@@ -18,7 +18,6 @@ const GameOverPage = () => {
         <RandomMessage />
       </div>
       <div style={{ margin: "1em 0 4em 0" }}>
-        <ScoreDisplay />
         <ScoreLogic />
       </div>
       <div className='button-wrapper'>
@@ -26,9 +25,6 @@ const GameOverPage = () => {
           <button
             style={{ margin: "0 1em" }}
             className='button button-start'
-            onClick={() => {
-              resetScore();
-            }}
           >
             Play again
           </button>
@@ -37,9 +33,6 @@ const GameOverPage = () => {
           <button
             style={{ margin: "0 1em" }}
             className='button button-start'
-            onClick={() => {
-              resetScore();
-            }}
           >
             Change category
           </button>

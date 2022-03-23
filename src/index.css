@@ -2,8 +2,8 @@
 @font-face {
   font-weight: normal;
   font-style: normal;
-  font-family: 'Orbitron', sans-serif;
-  font-family: 'Quantico', sans-serif;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Quantico", sans-serif;
 }
 
 *,
@@ -18,14 +18,14 @@
 
 /* --- root variables --- */
 :root {
-  --blueDark: #0D1C81;
+  --blueDark: #0d1c81;
   --blueLight: #1c84ad;
   --magenta: #d323bb;
   --white: #f0faf2;
   --grey: #b9b9b9;
   --background: #f4eee8;
-  --font-family: 'Orbitron', sans-serif;
-  --headFont: 'Orbitron', sans-serif;
+  --font-family: "Orbitron", sans-serif;
+  --headFont: "Orbitron", sans-serif;
   --backgroundImg: url("https://res.cloudinary.com/efer/image/upload/v1645261184/CarCompare/abstract-bcg_tismwh.png");
 }
 
@@ -118,7 +118,8 @@ ul {
 
 .versus-bar .vs-line {
   position: absolute;
-  background-color: var(--blueDark);
+  background-color: #636363;
+  opacity: 0.4;
   width: 2em;
   min-height: 100%;
   display: flex;
@@ -151,22 +152,22 @@ ul {
   background-position: center;
 }
 
-#leftItem{
+#leftItem {
   left: 0;
 }
 
-#rightItem{
+#rightItem {
   right: 0;
 }
 
 .carDataContainer {
-    display:block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 80%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
 }
 
 .carDataContainer img {
@@ -188,9 +189,9 @@ ul {
 }
 
 .overlay {
-    width: 100vh;
-    height: 100vh;
-    background: rgba(0,0,0,0.6);
+  width: 100vh;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 @media only screen and (max-width: 800px) {
@@ -207,8 +208,8 @@ ul {
   .versus-bar {
     width: 100%;
   }
-.versus-bar .vs-line {
-  width: 100%;
-  min-height: 1.5em;
-}
+  .versus-bar .vs-line {
+    width: 100%;
+    min-height: 1.5em;
+  }
 }

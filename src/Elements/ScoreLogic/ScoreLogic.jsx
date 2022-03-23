@@ -1,7 +1,9 @@
+import React from "react";
+import ScoreDisplay from "../../Elements/ScoreDisplay/ScoreDisplay";
+
 const ScoreLogic = () => {
   const getRecentScore =
     localStorage.getItem("recentScore");
-
   const highScore =
     JSON.parse(localStorage.getItem("highScore")) || [];
   const score = { score: getRecentScore };
@@ -12,40 +14,36 @@ const ScoreLogic = () => {
     "highScore",
     JSON.stringify(highScore)
   );
-  const getHighScore = localStorage
-    .getItem("highScore")
-    .replace(/\D/g, "");
+
+  const getHighScore = JSON.parse(
+    localStorage.getItem("highScore")
+  )[0].score;
+
+  function noPoints() {
+    if (getRecentScore == null) {
+      localStorage.setItem("recentScore", 0);
+    }
+    if (getHighScore == null) {
+      localStorage.setItem("highScore", 0);
+    }
+  }
+  noPoints();
 
   return (
     <>
-      <h1 id='finalScore'>{getRecentScore}</h1>
-      <h1 id='finalScore'>{getHighScore}</h1>
+      <ScoreDisplay text='Points:' score={getRecentScore} />
+      <ScoreDisplay
+        text='Highscore:'
+        score={getRecentScore}
+      />
     </>
   );
 };
-function resetScore() {
-  localStorage.setItem("recentScore", 0);
-}
 
-const getRecentScore = localStorage.getItem("recentScore");
-
-const getHighScore = localStorage.getItem("highScore");
-//   .replace(/\D/g, "");
-
-function noPoints() {
-  if (getRecentScore == null) {
-    localStorage.setItem("recentScore", 0);
-  }
-  if (getHighScore == null) {
-    localStorage.setItem("highScore", 0);
-  }
-}
-noPoints();
-
-export {
-  resetScore,
-  noPoints,
-  getRecentScore,
-  getHighScore,
-};
+// export {
+//   resetScore,
+//   noPoints,
+//   getRecentScore,
+//   getHighScore,
+// };
 export default ScoreLogic;

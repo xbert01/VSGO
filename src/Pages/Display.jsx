@@ -2,19 +2,14 @@ import React from "react";
 import Buttons from "../Elements/Buttons/Buttons";
 import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
-import Shuffle from "../Elements/Shuffle";
 import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState } from "react";
-import { noPoints } from "../Elements/ScoreLogic/ScoreLogic";
-import { getHighScore } from "../Elements/ScoreLogic/ScoreLogic";
 
 function Display() {
-  noPoints();
   function Next() {
     CarData.shift();
-    console.log(CarData)
   }
 
   let leftCar = CarData.slice(0, 1);
@@ -28,6 +23,10 @@ function Display() {
     setCount(counter + 1);
     localStorage.setItem("recentScore", counter + 1);
   }
+
+  const getHighScore = JSON.parse(
+    localStorage.getItem("highScore")
+  )[0].score;
 
   function goToGameOverPage() {
     // alert("You fucked up, boy");
@@ -58,37 +57,34 @@ function Display() {
       <Nav score={counter} high={getHighScore} />
       <div className='carScreens'>
         {/* <Buttons a={isHigher()} /> */}
-        <div>{EvenFile(leftCar)}</div>
+        <>{EvenFile(leftCar)}</>
         <VersusBar />
-        <div>
-          {EmptyFile(rightCar)}
-        </div>
+        <>{EmptyFile(rightCar)}</>
       </div>
 
- 
-        <div id='movies' className='button-bar'>
-          <button
-            onClick={() => isHigher()}
-            className='button button-higher'
-            style={{ marginBottom: "0.5em" }}
-          >
-            Higher
-          </button>
-          <button
-            onClick={() => isEven()}
-            className='button button-even'
-            style={{ marginBottom: "0.5em" }}
-          >
-            Even
-          </button>
-          <button
-            onClick={() => isLower()}
-            className='button button-lower'
-            style={{ marginBottom: "0.5em" }}
-          >
-            Lower
-          </button>
-        </div>
+      <div id='movies' className='button-bar'>
+        <button
+          onClick={() => isHigher()}
+          className='button button-higher'
+          style={{ marginBottom: "0.5em" }}
+        >
+          Higher
+        </button>
+        <button
+          onClick={() => isEven()}
+          className='button button-even'
+          style={{ marginBottom: "0.5em" }}
+        >
+          Even
+        </button>
+        <button
+          onClick={() => isLower()}
+          className='button button-lower'
+          style={{ marginBottom: "0.5em" }}
+        >
+          Lower
+        </button>
+      </div>
     </>
   );
 }
