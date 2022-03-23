@@ -11,9 +11,10 @@ const Nav = ({ score, high }) => {
         style={{
           display: "flex",
           justifyContent: "center",
-          backgroundColor: "var(--blueDark)",
           color: "white",
           padding: "1em",
+          position: "absolute",
+          zIndex: "2"
         }}
       >
         <Link to='/'>
@@ -25,8 +26,9 @@ const Nav = ({ score, high }) => {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: "var(--blueDark)",
           color: "white",
+          position: "absolute",
+          zIndex: "2"
         }}
       >
         <div

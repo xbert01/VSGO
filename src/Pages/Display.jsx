@@ -14,6 +14,7 @@ function Display() {
   noPoints();
   function Next() {
     CarData.shift();
+    console.log(CarData)
   }
 
   let leftCar = CarData.slice(0, 1);
@@ -57,21 +58,14 @@ function Display() {
       <Nav score={counter} high={getHighScore} />
       <div className='carScreens'>
         {/* <Buttons a={isHigher()} /> */}
-        <div className='carRandom'>{EvenFile(leftCar)}</div>
+        <div>{EvenFile(leftCar)}</div>
         <VersusBar />
-        <div className='carRandom'>
+        <div>
           {EmptyFile(rightCar)}
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          minHeight: "15vh",
-          backgroundColor: "var(--blueDark)",
-        }}
-      >
+ 
         <div id='movies' className='button-bar'>
           <button
             onClick={() => isHigher()}
@@ -95,8 +89,6 @@ function Display() {
             Lower
           </button>
         </div>
-        {/* <Shuffle /> */}
-      </div>
     </>
   );
 }

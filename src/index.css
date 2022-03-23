@@ -97,21 +97,23 @@ ul {
 
 /*main container styling*/
 .carScreens {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
-  position: relative;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
 }
 
 .versus-bar {
   display: flex;
+  position: absolute;
   align-items: center;
   justify-content: center;
   min-height: 100%;
   width: 5em;
   opacity: 1;
-  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .versus-bar .vs-line {
@@ -139,37 +141,35 @@ ul {
   transform: rotate(-45deg);
 }
 
-.carRandom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+.carContainer {
+  position: fixed;
+  width: 50%;
   height: 100%;
-  z-index: -1;
-}
-
-.carRandom .carContainer {
-  width: 100%;
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  z-index: 0;
   overflow: hidden;
-  position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
-.car-list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+#leftItem{
+  left: 0;
 }
 
-.car-list-container img {
+#rightItem{
+  right: 0;
+}
+
+.carDataContainer {
+    display:block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.carDataContainer img {
   width: 10%;
 }
 
@@ -187,18 +187,11 @@ ul {
   text-align: center;
 }
 
-/*Images*/
-.demo-bg {
-  opacity: 0.6;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  object-fit: cover;
-  z-index: -2;
+.overlay {
+    width: 100vh;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
 }
-
 
 @media only screen and (max-width: 800px) {
   .carScreens {

@@ -1,7 +1,11 @@
 
 .button-bar {
   position: absolute;
+  right: 0;
+  top: 15em;
   display: flex;
+  width: 50%;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
