@@ -11,6 +11,7 @@ const Nav = ({ score, high }) => {
         color: "white",
         position: "absolute",
         zIndex: "2",
+        padding: "2em",
       }}
     >
       <ScoreDisplay text='Score:' score={score} />

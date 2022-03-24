@@ -2,7 +2,7 @@
 .button-bar {
   position: absolute;
   right: 0;
-  top: 15em;
+  padding-top: 30%;
   display: flex;
   width: 50%;
   height: 100%;
@@ -46,91 +46,76 @@
 
 
 .button-start {
-  background: #d323bb;
+     border: 3px solid #d323bb;
+  background: none;
   box-shadow: #a51c93 0 10px 20px -10px;
   color: #ffffff;
   width: 10em;
   height: 3em;
 }
 
-.button-start:hover,
-.button-start:focus {
+.button-start:hover {
   background-color: #a51c93;
 }
 
-.button-start:active {
-  background: #8f197f;
-}
-
-.button-start:disabled {
-  cursor: not-allowed;
-  background: #811773;
-}
-
-
 .button-higher {
-  background: #0aa724;
+  border: 3px solid #0aa724;
+  background: none;
   box-shadow: #06880d6c 0 10px 20px -10px;
   color: #ffffff;
 }
 
-.button-higher:hover,
-.button-higher:focus {
+.button-higher:hover {
   background-color: #1f8a1f;
 }
 
-.button-higher:active {
-  background: #066129;
-}
-
-.button-higher:disabled {
-  cursor: not-allowed;
-  background: rgba(9, 100, 36, 0.733);
-}
 
 .button-even {
-  background: #f0c713;
+   border: 3px solid #f0c713;
+  background: none;
   box-shadow: #b69b05a6 0 10px 20px -10px;
   color: #ffffff;
 }
 
-.button-even:hover,
-.button-even:focus {
+.button-even:hover {
   background-color: #ccaa15;
 }
 
-.button-even:active {
-  background: #ccaa15;
-}
-
-.button-even:disabled {
-  cursor: not-allowed;
-  background: #ccaa15;
-}
-
 .button-lower {
-  background: #b60303;
+   border: 3px solid #b60303;
+  background: none;
   box-shadow: #970606d2 0 10px 20px -10px;
   color: #ffffff;
 }
 
-.button-lower:hover,
-.button-lower:focus {
+.button-lower:hover {
   background-color: #940a0a;
 }
 
-.button-lower:active {
+/* .button-lower:active {
   background: #810909;
 }
 
 .button-lower:disabled {
   cursor: not-allowed;
   background: #810909;
-}
+} */
 
 @media only screen and (max-width: 800px) {
 .button-start{
   width: 8em;
   height: 2.5em;
+}
+
+.button-bar {
+  bottom: 0;
+  padding-bottom: 30%;
+  display: flex;
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: center; */
+  z-index: 999;
 }
 }

@@ -118,9 +118,9 @@ ul {
 
 .versus-bar .vs-line {
   position: absolute;
-  background-color: #636363;
-  opacity: 0.4;
-  width: 2em;
+  background-color: var(--blueDark);
+  opacity: 0.5;
+  width: 0.5em;
   min-height: 100%;
   display: flex;
   align-items: center;
@@ -142,7 +142,7 @@ ul {
   transform: rotate(-45deg);
 }
 
-.carContainer {
+.itemContainer {
   position: fixed;
   width: 50%;
   height: 100%;
@@ -152,15 +152,15 @@ ul {
   background-position: center;
 }
 
-#leftItem {
+#item1 {
   left: 0;
 }
 
-#rightItem {
+#item2 {
   right: 0;
 }
 
-.carDataContainer {
+.itemDataContainer {
   display: block;
   position: absolute;
   top: 50%;
@@ -170,22 +170,9 @@ ul {
   width: 80%;
 }
 
-.carDataContainer img {
-  width: 10%;
-}
 
-.car-name-container {
-  padding: 0.3rem;
-}
-
-.carRandom h2 {
-  color: var(--blueDark);
-  text-align: center;
-}
-
-.car-name-container h3 {
-  color: var(--blueLight);
-  text-align: center;
+.itemDataContainer img{  
+  width: 15%;
 }
 
 .overlay {
@@ -195,16 +182,35 @@ ul {
 }
 
 @media only screen and (max-width: 800px) {
+
   .carScreens {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.itemContainer {
+    min-height: 35vh;
+        width: 100%;
+    height: 50%;
   }
 
-  .carRandom .carContainer {
-    min-height: 35vh;
-  }
+
+#item1 {
+  top: 0;
+}
+
+#item2 {
+  bottom: 0;
+}
+
+
+#item2 .itemDataContainer {
+  top: 30%;
+}
+
   .versus-bar {
     width: 100%;
   }
