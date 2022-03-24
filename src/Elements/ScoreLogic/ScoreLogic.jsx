@@ -40,13 +40,12 @@ const ScoreLogic = () => {
 
 export default ScoreLogic;
 
-
  const getRecentScore =
     localStorage.getItem("recentScore");
- const getHighScore = JSON.parse(
-    localStorage.getItem("highScore")
- )[0].score;
-
+    const getHighScore = JSON.parse(
+      localStorage.getItem("highScore")
+      )[0].score;
+      
    function noPoints() {
     if (getRecentScore == null || undefined) {
       localStorage.setItem("recentScore", 0);
@@ -56,7 +55,6 @@ export default ScoreLogic;
     }
   }
   noPoints();
-  
 
   export {
   noPoints,
