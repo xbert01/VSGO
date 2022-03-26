@@ -42,9 +42,9 @@ export default ScoreLogic;
 
  const getRecentScore =
     localStorage.getItem("recentScore");
-    const getHighScore = JSON.parse(
+    let getHighScore =
       localStorage.getItem("highScore")
-      )[0].score;
+      
       
    function noPoints() {
     if (getRecentScore == null || undefined) {
