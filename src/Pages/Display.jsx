@@ -13,8 +13,6 @@ function Display() {
     CarData.shift();
   }
 
-  noPoints();
-
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
   let item3 = CarData.slice(2, 3);

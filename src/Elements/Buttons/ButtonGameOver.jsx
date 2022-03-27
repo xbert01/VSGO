@@ -1,6 +1,8 @@
 import "./Buttons.css";
-import CarData from "../CarData";
-import { useState } from "react";
+
+function resetScore() {
+   localStorage.setItem("recentScore", 0);
+}
 
 const ButtonsGameOver = () => {
   return (
@@ -8,7 +10,8 @@ const ButtonsGameOver = () => {
         <a href='/game'>
           <button
             style={{ margin: "2em 1em" }}
-            className='button button-start'
+          className='button button-start'
+          onClick={() => resetScore()}
           >
             Play again
           </button>
@@ -16,7 +19,8 @@ const ButtonsGameOver = () => {
         <a href='/'>
           <button
             style={{ margin: "2em 1em" }}
-            className='button button-start'
+          className='button button-start'
+          onClick={() => resetScore()}
           >
             Change category
           </button>

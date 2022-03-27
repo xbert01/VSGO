@@ -2,8 +2,6 @@ import Logo from "./Logo";
 import ScoreDisplay from "../Elements/ScoreDisplay/ScoreDisplay";
 
 const Nav = ({ score, high }) => {
-
-  const replacedHigh = high || '';
   
   return (
     <div
@@ -18,7 +16,7 @@ const Nav = ({ score, high }) => {
       }}
     >
       <ScoreDisplay text='Score:' score={score} />
-      <ScoreDisplay text='Highscore:' score={replacedHigh.replace(/[^0-9]/g,'')} />
+      <ScoreDisplay text='Highscore:' score={high} />
     </div>
   );
 };
