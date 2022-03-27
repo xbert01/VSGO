@@ -51,38 +51,6 @@ const CarData = [
     model: "Gallardo",
     speed: "315",
     year: "2003"
-  }, {
-    id: 6,
-    img: "",
-    brand: "",
-    logo: "",
-    model: "",
-    speed: "",
-    year: "",
-  }, {
-    id: 7,
-    img: "",
-    brand: "",
-    logo: "",
-    model: "",
-    speed: "",
-    year: "",
-  }, {
-    id: 8,
-    img: "",
-    brand: "",
-    logo: "",
-    model: "",
-    speed: "",
-    year: "",
-  }, {
-    id: 9,
-    img: "",
-    brand: "",
-    logo: "",
-    model: "",
-    speed: "",
-    year: "",
   }];
 
 export default CarData;

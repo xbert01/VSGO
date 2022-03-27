@@ -1,15 +1,17 @@
-import './CategoryBar.css'
+import './CategoryBar.css';
+import { Link } from "react-router-dom";
+
 
 const CategoryBar = () => {
   return (
     <div className="category-bar">
-          {Categories.map((category) => (
-             <a href = {category.link}>
+      {Categories.map((category) => (
+            <Link to = {category.link}>
                 <div className="category-element">
                     <img src={category.img} />
                     <h3>{category.title}</h3>
                 </div>
-             </a>
+            </Link>
                             ))}
     </div>
   );

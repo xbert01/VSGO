@@ -1,8 +1,6 @@
-import React from "react";
-import Buttons from "./Buttons/Buttons";
 import CarData from "../Elements/CarData";
 
-const Shuffle = () => {
+export function Shuffle() {
   const setShuffle = (r) => {
     for (let i = r.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -16,17 +14,4 @@ const Shuffle = () => {
     return setShuffle(r);
   };
   Reshuffled(CarData);
-
-  return (
-    <>
-      <button
-        className='button button-higher'
-        onClick={() => Reshuffled(CarData)}
-      >
-        Refresh
-      </button>
-    </>
-  );
 };
-
-export default Shuffle;

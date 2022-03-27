@@ -1,4 +1,5 @@
 import "./Buttons.css";
+import { Link } from "react-router-dom";
 
 function resetScore() {
    localStorage.setItem("recentScore", 0);
@@ -7,7 +8,7 @@ function resetScore() {
 const ButtonsGameOver = () => {
   return (
           <div className='button-wrapper'>
-        <a href='/game'>
+        <Link to="/game">
           <button
             style={{ margin: "2em 1em" }}
           className='button button-start'
@@ -15,8 +16,8 @@ const ButtonsGameOver = () => {
           >
             Play again
           </button>
-        </a>
-        <a href='/'>
+        </Link>
+         <Link to="/">
           <button
             style={{ margin: "2em 1em" }}
           className='button button-start'
@@ -24,8 +25,7 @@ const ButtonsGameOver = () => {
           >
             Change category
           </button>
-          {/* <Shuffle /> */}
-        </a>
+        </Link>
       </div>
   );
 };

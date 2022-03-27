@@ -2,7 +2,6 @@ import Logo from "./Logo";
 import ScoreDisplay from "../Elements/ScoreDisplay/ScoreDisplay";
 
 const Nav = ({ score, high }) => {
-  
   return (
     <div
       style={{

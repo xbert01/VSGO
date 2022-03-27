@@ -6,12 +6,24 @@ import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState } from "react";
-import {  noPoints, getRecentScore, getHighScore} from "../Elements/ScoreLogic/ScoreLogic"
+import {
+  noPoints,
+  getRecentScore,
+} from "../Elements/ScoreLogic/ScoreLogic";
+import { Shuffle } from "../Elements/Shuffle";
 
 function Display() {
   function Next() {
     CarData.shift();
   }
+
+  // Shuffle();
+
+  // function Load() {
+  // window.onload = Shuffle()
+  // }
+  // Load();
+
 
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
@@ -28,7 +40,7 @@ function Display() {
   function goToGameOverPage() {
     return (window.location.href = "/gameover");
   }
-  
+
   function isHigher() {
     if (item1Data < item2Data) {
       count();
@@ -48,14 +60,19 @@ function Display() {
     } else goToGameOverPage();
   }
 
+
+    const getHighScore = JSON.parse(
+    localStorage.getItem("highScore")
+  )[0].score;
   return (
     <>
       <Nav score={counter} high={getHighScore} />
-      <div className='carScreens'>
-        {/* <Buttons a={isHigher()} /> */}
-        <>{EvenFile(item1)}</>
+      <div className='carScreens' >
+        <div>{EvenFile(item1)}</div>
+        {/* <div className='hvr-pulse-grow'></div> */}
         <VersusBar />
-        <>{EmptyFile(item2)}</>
+        <div>{EmptyFile(item2)}</div>
+        {/* <div className='hvr-pulse-grow'></div> */}
       </div>
 
       <div id='movies' className='button-bar'>

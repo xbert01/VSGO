@@ -19,45 +19,36 @@ const ScoreLogic = () => {
     localStorage.getItem("highScore")
   )[0].score;
 
-  function noPoints() {
-    if (getRecentScore == null) {
-      localStorage.setItem("recentScore", 0);
-    }
-    if (getHighScore == null) {
-      localStorage.setItem("highScore", 0);
-    }
-  }
-  noPoints();
-
   return (
-    <div style={{display: "flex"}}>
-      <ScoreDisplay text='Points:' score={getRecentScore} style={{margin: "0 3em"}}/>
-      <ScoreDisplay text='Highscore:' score={getHighScore} style={{margin: "0 3em"}}/>
+    <div style={{ display: "flex" }}>
+      <ScoreDisplay
+        text='Points:'
+        score={getRecentScore}
+        style={{ margin: "0 3em" }}
+      />
+      <ScoreDisplay
+        text='Highscore:'
+        score={getHighScore}
+        style={{ margin: "0 3em" }}
+      />
     </div>
   );
 };
 
-
 export default ScoreLogic;
 
- const getRecentScore =
-    localStorage.getItem("recentScore");
-    let getHighScore =
-      localStorage.getItem("highScore")
-      
-      
-   function noPoints() {
-    if (getRecentScore == null || undefined) {
-      localStorage.setItem("recentScore", 0);
-    }
-    if (getHighScore == null || undefined) {
-      localStorage.setItem("highScore", 0);
-    }
-  }
-  noPoints();
+const getRecentScore = localStorage.getItem("recentScore");
+const getHighScore = localStorage.getItem("highScore");
 
-  export {
-  noPoints,
-  getRecentScore,
-  getHighScore,
-};
+
+function noPoints() {
+  if (getRecentScore == null || undefined) {
+    localStorage.setItem("recentScore", 0);
+  }
+  if (getHighScore == null || undefined) {
+    localStorage.setItem("highScore", 0);
+  }
+}
+noPoints();
+
+export { noPoints, getRecentScore, getHighScore };
