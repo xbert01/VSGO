@@ -18,7 +18,7 @@ const GameStartPage = () => {
       </h3>
       <CategoryBar />
 
-        <Link to="/game">
+        {/* <Link to="/game">
         <button
           style={{}}
           className='button button-start'
@@ -26,7 +26,7 @@ const GameStartPage = () => {
         >
           Start Game
         </button>
-        </Link>
+        </Link> */}
 
     </div>
   );

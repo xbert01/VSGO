@@ -1,35 +1,38 @@
 import React from "react";
 import axios from 'axios';
-import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
-import CarData from "../Elements/CarData";
-import { EmptyFile } from "../Elements/EmptyFile";
+import { LeftTemplateCrypto } from "../Elements/LeftTemplateCrypto";
+import { RightTemplateCrypto } from "../Elements/RightTemplateCrypto";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
-import Crypto from "./Movies/Coins";
-import CoinData from "./Movies/MovieData";
 
-function Display() {
-  function Next() {
-    CarData.shift();
-  }
-
-  // console.log(Crypto)
-  // Shuffle();
-
-  // function Load() {
-  // window.onload = Shuffle()
-  // }
-  // Load();
+function CryptoGame() {
     
-
-  let item1 = CarData.slice(0, 1);
-  let item2 = CarData.slice(1, 2);
-  // let item3 = CarData.slice(2, 3);
-
-  let item1Data = item1[0].speed;
-  let item2Data = item2[0].speed;
-
+    // Shuffle();
+    
+    // function Load() {
+        // window.onload = Shuffle()
+        // }
+        // Load();
+        const [crypto, setCrypto] = useState([]);
+        
+        useEffect(() => {
+            axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+            .then(response => {
+                setCrypto(response.data)
+            })
+            .catch(error => console.log(error));
+        }, [])
+        
+        function Next() {
+          crypto.shift();
+        }
+        
+        let item3 = crypto.slice(0, 1);
+        let item4 = crypto.slice(1, 2);
+        
+        let item3Data = item3.map((item) =>(item.market_cap_rank));
+        let item4Data = item4.map((item) =>(item.market_cap_rank));
 
   const [counter, setCount] = useState(0);
   function count() {
@@ -41,19 +44,19 @@ function Display() {
   }
 
   function isHigher() {
-    if (item1Data < item2Data) {
+    if (item3Data > item4Data) {
       count();
       Next();
     } else goToGameOverPage();
   }
   function isEven() {
-    if (item1Data === item2Data) {
+    if (item3Data === item4Data) {
       count();
       Next();
     } else goToGameOverPage();
   }
   function isLower() {
-    if (item1Data > item2Data) {
+    if (item3Data < item4Data) {
       count();
       Next();
     } else goToGameOverPage();
@@ -67,10 +70,10 @@ function Display() {
     <>
       <Nav score={counter} high={getHighScore} />
       <div className='carScreens' >
-        <div>{EvenFile(item1)}</div>
+        <div>{LeftTemplateCrypto(item3)}</div>
         {/* <div className='hvr-pulse-grow'></div> */}
         <VersusBar />
-        <div>{EmptyFile(item2)}</div>
+        <div>{RightTemplateCrypto(item4)}</div>
         {/* <div className='hvr-pulse-grow'></div> */}
       </div>
 
@@ -101,4 +104,4 @@ function Display() {
   );
 }
 
-export default Display;
+export default CryptoGame;

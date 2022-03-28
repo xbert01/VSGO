@@ -33,10 +33,11 @@ const Categories = [
   //   img: "https://res.cloudinary.com/efer/image/upload/v1645285107/CarCompare/planet-earth_lasasb.png",
   //   title: "world",
   //   link: "/world"
-  // }, {
-  //   id: 2,
-  //   img: "https://res.cloudinary.com/efer/image/upload/v1645285469/CarCompare/rich-man_rr6zv7.png",
-  //   title: "net worth",
-  //   link: "/networth"
-  // }
+  // },
+  {
+    id: 1,
+    img: "https://res.cloudinary.com/efer/image/upload/v1645285469/CarCompare/rich-man_rr6zv7.png",
+    title: "crypto",
+    link: "/cryptogame"
+  }
 ]
