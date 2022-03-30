@@ -46,35 +46,37 @@ const RandomMessage = () => {
         },
     ]
 
+    console.log(messages[5]);
+
     const getMessage = () => {
-        if (getRecentScore <= 5) {
+        if (getRecentScore < 5) {
             return messages[0].text
         } 
-        else if (6 < getRecentScore <= 10) {
+        else if (4 < getRecentScore < 10) {
             return messages[1].text
         }
-        else if (11 < getRecentScore <= 15) {
+        else if (9 < getRecentScore < 15) {
             return messages[2].text
         }
-        else if (16 < getRecentScore <= 20) {
+        else if (14 < getRecentScore < 20) {
             return messages[3].text
         }
-        else if (21 < getRecentScore <= 30) {
+        else if (19 < getRecentScore < 30) {
             return messages[4].text
         }
-        else if (31 < getRecentScore <= 40) {
+        else if (29 < getRecentScore < 40) {
             return messages[5].text
         }
-        else if (41 < getRecentScore <= 50) {
+        else if (39 < getRecentScore < 50) {
             return messages[6].text
         }
-        else if (51 < getRecentScore <= 65) {
+        else if (49 < getRecentScore < 65) {
             return messages[7].text
         }
-        else if (66 < getRecentScore <= 80) {
+        else if (64 < getRecentScore < 80) {
             return messages[8].text
         }
-        else if (getRecentScore > 80) {
+        else if (getRecentScore > 79) {
             return messages[9].text
         }
     }

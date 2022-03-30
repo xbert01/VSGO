@@ -10,8 +10,8 @@ const showData = (data) => (
             <div className='item-name-container'>
               <h3>{item.name}</h3>
             </div>
-            <h2>Position in Market Cap</h2>
-            <h2 style={{ color:"var(--magenta)" }}>{item.market_cap_rank}</h2>
+            <h2>Market Cap:</h2>
+            <h2 style={{ color:"var(--magenta)" }}>${JSON.stringify(item.market_cap).slice(0,3) + ',' + JSON.stringify(item.market_cap).slice(3,6) + ',' + JSON.stringify(item.market_cap).slice(6,9) + ',' + JSON.stringify(item.market_cap).slice(9,12)}</h2>
           </div>
         </div>
       </div>

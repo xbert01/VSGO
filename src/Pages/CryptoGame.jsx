@@ -31,8 +31,8 @@ function CryptoGame() {
         let item3 = crypto.slice(0, 1);
         let item4 = crypto.slice(1, 2);
         
-        let item3Data = item3.map((item) =>(item.market_cap_rank));
-        let item4Data = item4.map((item) =>(item.market_cap_rank));
+        let item3Data = item3.map((item) =>(item.market_cap));
+        let item4Data = item4.map((item) =>(item.market_cap));
 
   const [counter, setCount] = useState(0);
   function count() {
@@ -44,7 +44,7 @@ function CryptoGame() {
   }
 
   function isHigher() {
-    if (item3Data > item4Data) {
+    if (item3Data < item4Data) {
       count();
       Next();
     } else goToGameOverPage();
@@ -56,7 +56,7 @@ function CryptoGame() {
     } else goToGameOverPage();
   }
   function isLower() {
-    if (item3Data < item4Data) {
+    if (item3Data > item4Data) {
       count();
       Next();
     } else goToGameOverPage();

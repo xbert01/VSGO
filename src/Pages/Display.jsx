@@ -6,8 +6,6 @@ import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
-import Crypto from "./Movies/Coins";
-import CoinData from "./Movies/MovieData";
 
 function Display() {
   function Next() {
@@ -16,20 +14,17 @@ function Display() {
 
   // console.log(Crypto)
   // Shuffle();
-
   // function Load() {
   // window.onload = Shuffle()
   // }
   // Load();
     
-
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
   // let item3 = CarData.slice(2, 3);
 
   let item1Data = item1[0].speed;
   let item2Data = item2[0].speed;
-
 
   const [counter, setCount] = useState(0);
   function count() {
