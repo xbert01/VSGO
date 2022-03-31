@@ -1,11 +1,12 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
 import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
+import "./Display.css"
 
 function Display() {
   function Next() {
@@ -18,7 +19,7 @@ function Display() {
   // window.onload = Shuffle()
   // }
   // Load();
-    
+
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
   // let item3 = CarData.slice(2, 3);
@@ -35,41 +36,46 @@ function Display() {
     return (window.location.href = "/gameover");
   }
 
-  function isHigher() {
-    if (item1Data < item2Data) {
+  function isHigher(a, b) {
+    if (a < b) {
       count();
       Next();
     } else goToGameOverPage();
   }
-  function isEven() {
-    if (item1Data === item2Data) {
+  function isEven(a, b) {
+    if (a === b) {
       count();
       Next();
     } else goToGameOverPage();
   }
-  function isLower() {
-    if (item1Data > item2Data) {
+  function isLower(a, b) {
+    if (a > b) {
       count();
       Next();
     } else goToGameOverPage();
   }
 
-
-    const getHighScore = JSON.parse(
+  const getHighScore = JSON.parse(
     localStorage.getItem("highScore")
   )[0].score;
   return (
-    <>
+    <div class='game-container'>
       <Nav score={counter} high={getHighScore} />
-      <div className='carScreens' >
-        <div>{EvenFile(item1)}</div>
-        {/* <div className='hvr-pulse-grow'></div> */}
-        <VersusBar />
-        <div>{EmptyFile(item2)}</div>
-        {/* <div className='hvr-pulse-grow'></div> */}
+      <div className='game'>
+        <div className="game-scroller game-scroller--new">
+          {/* <VersusBar /> */}
+          <>{EvenFile(item1)}</>
+          <>
+            {EmptyFile(item2)}
+          </>
+          <>
+            {EmptyFile(item1)}
+          </>
+        </div>
+        {/* <Buttons /> */}
       </div>
 
-      <div id='movies' className='button-bar'>
+      {/* <div id='movies' className='button-bar'>
         <button
           onClick={() => isHigher()}
           className='button button-higher'
@@ -91,9 +97,10 @@ function Display() {
         >
           Lower
         </button>
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 }
 
 export default Display;
+

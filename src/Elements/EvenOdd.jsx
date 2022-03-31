@@ -1,7 +1,7 @@
 const showData = (data) => (
   <>
-    {data.map((car, index) => (
-      <div className='itemContainer' id="item1" key={index + 1} style={{ backgroundImage: 
+    {data.map((car) => (
+      <div className='pack-term' style={{ backgroundImage: 
         `url(${car.img})`
       }}>
         <div className='overlay'>
