@@ -1,10 +1,21 @@
-const showEmptyFile = (data) => (
-  <>
+import React, { useState } from "react";
+
+// function App() {
+//   const [isActive, setActive] = useState("false");
+  
+//   const handleToggle = () => {
+//     setActive(!isActive);
+//   };
+  
+  const showEmptyFile = (data) => (
+    
+    <>
     {data.map((car) => (
       <div className='pack-term' style={{ backgroundImage: 
         `url(${car.img})`
-      }}>
-      <div className="answers right ">
+      }}>/ 
+      {/*<div className={isActive ? "answers" : "answers right"}> */}
+      <div className='answers wrong'>
         <div className='overlay'>
           <div className='itemDataContainer' key={car.id}>
             <img src={car.logo} alt='logo' />
@@ -13,6 +24,7 @@ const showEmptyFile = (data) => (
             </div>
             <h4>{car.year}</h4>
             <h2>Max Speed is...</h2>
+           {/* <button onClick={handleToggle}>Toggle class</button>*/}
           </div>
           </div>
         </div>
@@ -20,7 +32,9 @@ const showEmptyFile = (data) => (
     ))}
   </>
 );
-
+  // }
 export const EmptyFile = (data) => (
   <>{showEmptyFile(data)}</>
 );
+        
+    

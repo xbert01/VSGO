@@ -181,31 +181,37 @@ ul {
 }
 
 .answers.right {
-  background: green;
+  background: #323335;
   opacity: 0.8;
-  animation: rightAnswer 2s normal;
+  animation: rightAnswer 4s normal;
 }
 @keyframes rightAnswer {
   0% {
     background-color: #323335;
   }
-  100% {
+  50% {
     background-color: green;
+  }
+  100% {
+    background-color: #323335;
   }
 }
 
 .answers.wrong {
-  background: #c81006;
-  opacity: 0.85;
-  animation: wrongAnswer 2s normal;
+  background: #323335;
+  opacity: 0.9;
+  animation: wrongAnswer 4s normal;
 }
 
 @keyframes wrongAnswer {
   0% {
     background-color: #323335;
   }
-  100% {
+  50% {
     background-color: #c81006;
+  }
+  100% {
+    background-color: #323335;
   }
 }
 
