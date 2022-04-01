@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ShowEmptyFile = (data) => {
+const showEmptyFile = (data) => {
   const [isActive, setActive] = useState(false);
   const handleToggle = () => {
     setActive(!isActive);
@@ -42,6 +42,6 @@ const ShowEmptyFile = (data) => {
 };
 
 export const EmptyFile = (data) => (
-  <>{ShowEmptyFile(data)}</>
+  <>{showEmptyFile(data)}</>
 );
 

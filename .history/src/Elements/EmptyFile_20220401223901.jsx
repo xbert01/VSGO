@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ShowEmptyFile = (data) => {
+const showEmptyFile = (data) => {
   const [isActive, setActive] = useState(false);
   const handleToggle = () => {
     setActive(!isActive);
@@ -29,7 +29,7 @@ const ShowEmptyFile = (data) => {
                 </div>
                 <h4>{car.year}</h4>
                 <h2>Max Speed is...</h2>
-                <button onClick={handleToggle}>
+                <button onClick={setActive(!isActive)}>
                   Toggle class
                 </button>
               </div>
@@ -42,6 +42,6 @@ const ShowEmptyFile = (data) => {
 };
 
 export const EmptyFile = (data) => (
-  <>{ShowEmptyFile(data)}</>
+  <>{showEmptyFile(data)}</>
 );
 

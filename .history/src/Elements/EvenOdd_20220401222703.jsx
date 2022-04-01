@@ -1,12 +1,10 @@
 const showData = (data) => {
   <>
     {data.map((car) => (
-      <div
-        className='pack-term'
-        style={{
-          backgroundImage: `url(${car.img})`,
-        }}
-      >
+      <div className='pack-term' style={{
+        backgroundImage:
+          `url(${car.img})`
+      }}>
         <div className='overlay'>
           <div className='itemDataContainer' key={car.id}>
             <img src={car.logo} alt='logo' />
@@ -15,15 +13,15 @@ const showData = (data) => {
             </div>
             <h4>{car.year}</h4>
             <h2>Max Speed is</h2>
-            <h2 style={{ color: "var(--magenta)" }}>
-              {car.speed}km/h
-            </h2>
+            <h2 style={{ color: "var(--magenta)" }}>{car.speed}km/h</h2>
           </div>
         </div>
       </div>
     ))}
-  </>;
+  </>
 };
 
 export const EvenFile = (data) => <>{showData(data)}</>;
+
+
 
