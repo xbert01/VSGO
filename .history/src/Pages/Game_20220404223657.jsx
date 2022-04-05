@@ -4,11 +4,12 @@ import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
 import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
-import Nav from "../Elements/Nav";
+import ScoreBar from "../Elements/ScoreBar";
+import NewButtons from "../Elements/NewButtons";
 import { useState, useEffect } from "react";
-import "./Display.css"
+import "./Game.css"
 
-function Display() {
+function Game() {
   function Next() {
     CarData.shift();
   }
@@ -22,7 +23,7 @@ function Display() {
 
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
-  // let item3 = CarData.slice(2, 3);
+  let item3 = CarData.slice(2, 3);
 
   let item1Data = item1[0].speed;
   let item2Data = item2[0].speed;
@@ -58,49 +59,21 @@ function Display() {
   const getHighScore = JSON.parse(
     localStorage.getItem("highScore")
   )[0].score;
+
   return (
-    <div class='game-container'>
-      <Nav score={counter} high={getHighScore} />
+    <>
       <div className='game'>
         <div className="game-scroller game-scroller--new">
-          {/* <VersusBar /> */}
           <>{EvenFile(item1)}</>
-          <>
-            {EmptyFile(item2)}
-          </>
-          <>
-            {EmptyFile(item1)}
-          </>
+          <>{EmptyFile(item2)}</>
+          <>{EmptyFile(item3)}</>
         </div>
+      <NewButtons />
         {/* <Buttons /> */}
       </div>
-
-      {/* <div id='movies' className='button-bar'>
-        <button
-          onClick={() => isHigher()}
-          className='button button-higher'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Higher
-        </button>
-        <button
-          onClick={() => isEven()}
-          className='button button-even'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Even
-        </button>
-        <button
-          onClick={() => isLower()}
-          className='button button-lower'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Lower
-        </button>
-      </div> */}
-    </div>
+    </>
   );
 }
 
-export default Display;
+export default Game;
 

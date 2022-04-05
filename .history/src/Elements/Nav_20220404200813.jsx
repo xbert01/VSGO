@@ -1,11 +1,11 @@
 import Logo from "./Logo";
-import ScoreDisplay from "../Elements/ScoreDisplay/ScoreDisplay";
+import ScoreGame from "../Elements/ScoreGame/ScoreGame";
 
-const Nav = ({ score, high }) => {
+const ScoreBar = ({ score, high }) => {
   return (
     <div
       style={{
-        display: "flex",
+        Game: "flex",
         width: "100%",
         justifyContent: "space-between",
         color: "white",
@@ -14,10 +14,10 @@ const Nav = ({ score, high }) => {
         padding: "2em",
       }}
     >
-      <ScoreDisplay text='Score:' score={score} />
-      <ScoreDisplay text='Highscore:' score={high} />
+      <ScoreGame text='Score:' score={score} />
+      <ScoreGame text='Highscore:' score={high} />
     </div>
   );
 };
 
-export default Nav;
+export default ScoreBar;
