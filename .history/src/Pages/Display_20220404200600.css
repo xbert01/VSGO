@@ -40,7 +40,7 @@
 
                 /* Column widths as the lowest expression of a fraction
 * e.g. 1/3 instead of 2/6.
-* class="col--1\/3"
+* className="col--1\/3"
 * usage @include cols(12) will produce styles for all fractions of 12
 */
 .pack-term {

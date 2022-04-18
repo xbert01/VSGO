@@ -24,7 +24,7 @@ const showEmptyFile = (data) => (
               </div>
               <h4>{car.year}</h4>
               <h2>Max Speed is...</h2>
-               <button onClick={handleToggle}>Toggle class</button>
+               <button onClick={handleToggle}>Toggle className</button>
             </div>
           </div>
         </div>

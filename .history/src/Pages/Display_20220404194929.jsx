@@ -59,7 +59,7 @@ function Game() {
     localStorage.getItem("highScore")
   )[0].score;
   return (
-    <div class='game-container'>
+    <div className='game-container'>
       <Nav score={counter} high={getHighScore} />
       <div className='game'>
         <div className="game-scroller game-scroller--new">

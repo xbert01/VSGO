@@ -60,7 +60,7 @@ function Game() {
   )[0].score;
   
   return (
-    <div class='game-container'>
+    <div className='game-container'>
       <div className='game'>
         <div className="game-scroller game-scroller--new">
           {/* <VersusBar /> */}

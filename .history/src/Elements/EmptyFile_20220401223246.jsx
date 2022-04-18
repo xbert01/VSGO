@@ -27,7 +27,7 @@ const showEmptyFile = (data) => {
               <h4>{car.year}</h4>
               <h2>Max Speed is...</h2>
               <button onClick={setActive(!isActive);}>
-                Toggle class
+                Toggle className
               </button>
             </div>
           </div>

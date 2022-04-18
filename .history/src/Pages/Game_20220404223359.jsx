@@ -67,9 +67,9 @@ function Game() {
           <>{EmptyFile(item2)}</>
           <>{EmptyFile(item3)}</>
         </div>
-        <div class="term-actions">
-          <button class="game-button term-actions__button term-actions__button--higher">Higher</button>
-          <button class="game-button term-actions__button term-actions__button--lower">Lower</button>
+        <div className="term-actions">
+          <button className="game-button term-actions__button term-actions__button--higher">Higher</button>
+          <button className="game-button term-actions__button term-actions__button--lower">Lower</button>
           <div>
           </div>
         </div>
