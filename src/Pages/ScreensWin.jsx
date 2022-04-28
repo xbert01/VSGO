@@ -5,7 +5,7 @@ import { EmptyFile } from "../Elements/EmptyFile";
 import { EvenFile } from "../Elements/EvenFile";
 import { NewButtons } from "../Elements/NewButtons";
 
-function Screens() {
+function ScreensWin() {
   // console.log(Crypto)
   // Shuffle();
   // function Load() {
@@ -22,7 +22,7 @@ function Screens() {
   )[0].score;
 
   return (
-    <div className='game-scroller game-scroller--new'>
+    <div className='game-scroller game-scroller--win'>
       <>{EvenFile(item1)}</>
       <>{EmptyFile(item2)}</>
       <>{EmptyFile(item3)}</>
@@ -30,5 +30,5 @@ function Screens() {
   );
 }
 
-export default Screens;
+export default ScreensWin;
 

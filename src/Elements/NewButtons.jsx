@@ -1,6 +1,7 @@
 import "./NewButtons.css";
 import CarData from "../Elements/CarData";
 import { useState } from "react";
+import ScreensWin from "../Pages/ScreensWin";
 
 const NewButtons = ({}) => {
   // function Next() {
@@ -26,18 +27,21 @@ const NewButtons = ({}) => {
   function isHigher(a, b) {
     if (a < b) {
       count();
+      ScreensWin();
       // Next();
     } else goToGameOverPage();
   }
   function isEven(a, b) {
     if (a === b) {
       count();
+      ScreensWin();
       // Next();
     } else goToGameOverPage();
   }
   function isLower(a, b) {
     if (a > b) {
       count();
+      ScreensWin();
       // Next();
     } else goToGameOverPage();
   }
