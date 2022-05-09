@@ -13,7 +13,6 @@ function Game() {
     CarData.shift();
   }
 
-  // console.log(Crypto)
   // Shuffle();
   // function Load() {
   // window.onload = Shuffle()
@@ -22,7 +21,7 @@ function Game() {
 
   let item1 = CarData.slice(0, 1);
   let item2 = CarData.slice(1, 2);
-  // let item3 = CarData.slice(2, 3);
+  let item3 = CarData.slice(2, 3);
 
   let item1Data = item1[0].speed;
   let item2Data = item2[0].speed;
