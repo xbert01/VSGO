@@ -1,0 +1,110 @@
+.game-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.game {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.game-scroller {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+@media screen and (orientation: landscape) {
+  .game-scroller {
+    width: 100%;
+    height: 100%;
+  }
+}
+.game-scroller--win {
+  -webkit-transition: -webkit-transform 0.4s ease-out 1.4s;
+  transition: -webkit-transform 0.4s ease-out 1.4s;
+  -o-transition: transform 0.4s ease-out 1.4s;
+  transition: transform 0.4s ease-out 1.4s;
+  transition: transform 0.4s ease-out 1.4s,
+    -webkit-transform 0.4s ease-out 1.4s;
+  -webkit-transform: translate3d(0, -33.333%, 0);
+  transform: translate3d(0, -33.333%, 0);
+}
+@media screen and (orientation: landscape) {
+  .game-scroller--win {
+    -webkit-transform: translate3d(-33.333%, 0, 0);
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+/* Column widths as the lowest expression of a fraction
+* e.g. 1/3 instead of 2/6.
+* className="col--1\/3"
+* usage @include cols(12) will produce styles for all fractions of 12
+*/
+.pack-term {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 33.33333%;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+}
+
+.pack-term:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (min-width: 60em) {
+  .pack-term {
+    width: 33.33333%;
+    height: 100%;
+    float: left;
+  }
+}
+@media screen and (orientation: landscape) {
+  .pack-term {
+    width: 33.33333%;
+    height: 100%;
+    float: left;
+  }
+}
+.pack-term__wrapper {
+  position: relative;
+  game: -ms-flexbox;
+  game: flex;
+  height: 100%;
+  width: 100%;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pack-term__wrapper--current {
+  vertical-align: top;
+}
+
+.pack-term__attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+}
+

@@ -1,0 +1,86 @@
+.game-end {
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.game-end__wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1.875rem 1.25rem;
+}
+@media screen and (min-width: 60em) {
+  .game-end__wrapper {
+    padding: 3.75rem 1.25rem;
+  }
+}
+@media screen and (orientation: landscape) {
+  .game-end__wrapper {
+    padding: 1.25rem;
+  }
+}
+
+.game-end-score-wrapper {
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.game-end-score {
+  line-height: 1.4;
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 0 auto 20px;
+  width: 90%;
+}
+@media screen and (min-width: 41.25em) {
+  .game-end-score {
+    width: 80%;
+    margin-top: 1.5rem;
+    margin-bottom: 0.9375rem;
+    font-size: 1.375rem;
+    display: block;
+  }
+}
+.game-end-score__score {
+  display: block;
+  font-size: 3.75rem;
+  line-height: 3.5rem;
+  color: #fff989;
+}
+@media screen and (min-width: 41.25em) {
+  .game-end-score__score {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 28.75em) {
+  .game-end-score__score {
+    line-height: 6.25rem;
+  }
+}
+@media screen and (orientation: landscape) {
+  .game-end-score__score {
+    line-height: 1;
+  }
+}
+
+.game-end-banner-ad {
+  max-width: 300px;
+  height: 250px;
+  margin: 40px auto 0;
+}
+@media screen and (min-width: 60em) {
+  .game-end-banner-ad {
+    height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+  }
+}
+
