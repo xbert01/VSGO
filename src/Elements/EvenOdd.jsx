@@ -19,7 +19,7 @@ const showData = (data) => (
     ))}
   </>
 );
-//revert
+
 export const EvenFile = (data) => <>{showData(data)}</>;
 
 
