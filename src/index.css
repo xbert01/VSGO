@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  max-width: 100%;
+  max-width: 150%;
 }
 
 /* --- root variables --- */
@@ -98,7 +98,7 @@ ul {
 /*main container styling*/
 .carScreens {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   height: 100%;
 }
@@ -122,7 +122,7 @@ ul {
   opacity: 0.5;
   width: 0.5em;
   min-height: 100%;
-  display: flex;
+  game: flex;
   align-items: center;
   justify-content: center;
 }
@@ -170,8 +170,7 @@ ul {
   width: 80%;
 }
 
-
-.itemDataContainer img{  
+.itemDataContainer img {
   width: 15%;
 }
 
@@ -181,6 +180,40 @@ ul {
   background: rgba(0, 0, 0, 0.6);
 }
 
+.answers.right {
+  background: #323335;
+  opacity: 0.8;
+  animation: rightAnswer 4s normal;
+}
+@keyframes rightAnswer {
+  0% {
+    background-color: #323335;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    background-color: #323335;
+  }
+}
+
+.answers.wrong {
+  background: #323335;
+  opacity: 0.9;
+  animation: wrongAnswer 4s normal;
+}
+
+@keyframes wrongAnswer {
+  0% {
+    background-color: #323335;
+  }
+  50% {
+    background-color: #c81006;
+  }
+  100% {
+    background-color: #323335;
+  }
+}
 
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
@@ -199,14 +232,16 @@ ul {
   position: absolute;
   width: 50%;
   height: 100%;
-  /* display: inline-block; */
+  /* Game: inline-block; */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   background-color: var(--blueDark);
 }
-.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+.hvr-pulse-grow:hover,
+.hvr-pulse-grow:focus,
+.hvr-pulse-grow:active {
   -webkit-animation-name: hvr-pulse-grow;
   animation-name: hvr-pulse-grow;
   -webkit-animation-duration: 0.3s;
@@ -219,35 +254,40 @@ ul {
   animation-direction: alternate;
 }
 
-@media only screen and (max-width: 800px) {
-
-  .carScreens {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+.game-scroller {
   width: 100%;
-  height: 100%;
+  height: 150%;
+  display: block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
-.itemContainer {
+@media only screen and (max-width: 800px) {
+  .carScreens {
+    game: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .itemContainer {
     min-height: 35vh;
-        width: 100%;
+    width: 100%;
     height: 50%;
   }
 
+  #item1 {
+    top: 0;
+  }
 
-#item1 {
-  top: 0;
-}
+  #item2 {
+    bottom: 0;
+  }
 
-#item2 {
-  bottom: 0;
-}
-
-
-#item2 .itemDataContainer {
-  top: 30%;
-}
+  #item2 .itemDataContainer {
+    top: 30%;
+  }
 
   .versus-bar {
     width: 100%;
@@ -257,3 +297,4 @@ ul {
     min-height: 1.5em;
   }
 }
+

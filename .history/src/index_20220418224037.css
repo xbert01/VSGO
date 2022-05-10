@@ -1,0 +1,300 @@
+/* Fonts */
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Quantico", sans-serif;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
+}
+
+/* --- root variables --- */
+:root {
+  --blueDark: #0d1c81;
+  --blueLight: #1c84ad;
+  --magenta: #d323bb;
+  --white: #f0faf2;
+  --grey: #b9b9b9;
+  --background: #f4eee8;
+  --font-family: "Orbitron", sans-serif;
+  --headFont: "Orbitron", sans-serif;
+  --backgroundImg: url("https://res.cloudinary.com/efer/image/upload/v1645261184/CarCompare/abstract-bcg_tismwh.png");
+}
+
+/*General styling*/
+html {
+  color: var(--white);
+  font-family: var(--headFont);
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+}
+
+/* komentarz*/
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1rem;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: var(--headFont);
+  color: var(--white);
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: var(--headFont);
+  color: var(--red);
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: var(--headFont);
+  color: var(--white);
+  font-size: 2rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: var(--headFont);
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-family: var(--headFont);
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+p {
+  font-family: var(--headFont);
+  max-width: 600px;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*main container styling*/
+.carScreens {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.versus-bar {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 5em;
+  opacity: 1;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.versus-bar .vs-line {
+  position: absolute;
+  background-color: var(--blueDark);
+  opacity: 0.5;
+  width: 0.5em;
+  min-height: 100%;
+  game: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vs-sign {
+  background-color: var(--blueDark);
+  position: relative;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  color: white;
+  width: 4em;
+  height: 4em;
+  z-index: 0;
+}
+
+.vs-sign img {
+  transform: rotate(-45deg);
+}
+
+.itemContainer {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+#item1 {
+  left: 0;
+}
+
+#item2 {
+  right: 0;
+}
+
+.itemDataContainer {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+.itemDataContainer img {
+  width: 15%;
+}
+
+.overlay {
+  width: 100vh;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.answers.right {
+  background: #323335;
+  opacity: 0.8;
+  animation: rightAnswer 4s normal;
+}
+@keyframes rightAnswer {
+  0% {
+    background-color: #323335;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    background-color: #323335;
+  }
+}
+
+.answers.wrong {
+  background: #323335;
+  opacity: 0.9;
+  animation: wrongAnswer 4s normal;
+}
+
+@keyframes wrongAnswer {
+  0% {
+    background-color: #323335;
+  }
+  50% {
+    background-color: #c81006;
+  }
+  100% {
+    background-color: #323335;
+  }
+}
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  /* Game: inline-block; */
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  background-color: var(--blueDark);
+}
+.hvr-pulse-grow:hover,
+.hvr-pulse-grow:focus,
+.hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+.game-scroller {
+  width: 100%;
+  height: 150%;
+  display: block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+@media only screen and (max-width: 800px) {
+  .carScreens {
+    game: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .itemContainer {
+    min-height: 35vh;
+    width: 100%;
+    height: 50%;
+  }
+
+  #item1 {
+    top: 0;
+  }
+
+  #item2 {
+    bottom: 0;
+  }
+
+  #item2 .itemDataContainer {
+    top: 30%;
+  }
+
+  .versus-bar {
+    width: 100%;
+  }
+  .versus-bar .vs-line {
+    width: 100%;
+    min-height: 1.5em;
+  }
+}
+

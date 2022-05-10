@@ -1,0 +1,41 @@
+
+.gameStartPage {
+  min-height: 100vh;
+  background-image: var(--backgroundImg);
+  object-fit: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameStartPage img{
+  width: 10em;
+  margin: 1em;
+}
+
+.gameStartPage h1{
+  font-size: 6em;
+}
+
+.gameStartPage h3{
+  font-size: 2em;
+  color: var(--grey);
+}
+
+/*MOBILE VERSION*/
+@media only screen and (max-width: 800px) {
+.gameStartPage img{
+  width: 5em;
+  margin: 1em;
+}
+
+.gameStartPage h1{
+  font-size: 3em;
+}
+.gameStartPage h3{
+  font-size: 0.5em;
+  width: 70%;
+}
+}
