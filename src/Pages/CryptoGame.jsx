@@ -7,13 +7,6 @@ import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
 
 function CryptoGame() {
-    
-    // Shuffle();
-    
-    // function Load() {
-        // window.onload = Shuffle()
-        // }
-        // Load();
         const [crypto, setCrypto] = useState([]);
         
         useEffect(() => {

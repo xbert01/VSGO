@@ -1,35 +1,27 @@
 import React from "react";
-import axios from 'axios';
 import { EvenFile } from "../Elements/EvenOdd";
 import VersusBar from "../Elements/VersusBar";
 import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
-import Crypto from "./Movies/Coins";
-import CoinData from "./Movies/MovieData";
+import { Shuffle , Reshuffled } from "../Elements/Shuffle";
 
 function Display() {
+  
+  const shuffleData = Shuffle(CarData);
+  const shuffled = Reshuffled(CarData);
+  
   function Next() {
-    CarData.shift();
+    shuffled.shift();
   }
 
-  // console.log(Crypto)
-  // Shuffle();
+   console.log(shuffled)
+  const item1 = shuffled.slice(0, 1);
+  const item2 = shuffled.slice(1, 2);
 
-  // function Load() {
-  // window.onload = Shuffle()
-  // }
-  // Load();
-    
-
-  let item1 = CarData.slice(0, 1);
-  let item2 = CarData.slice(1, 2);
-  // let item3 = CarData.slice(2, 3);
-
-  let item1Data = item1[0].speed;
-  let item2Data = item2[0].speed;
-
+  const item1Data = item1[0].speed;
+  const item2Data = item2[0].speed;
 
   const [counter, setCount] = useState(0);
   function count() {
@@ -59,14 +51,13 @@ function Display() {
     } else goToGameOverPage();
   }
 
-
-    const getHighScore = JSON.parse(
+  const getHighScore = JSON.parse(
     localStorage.getItem("highScore")
   )[0].score;
   return (
     <>
       <Nav score={counter} high={getHighScore} />
-      <div className='carScreens' >
+      <div className='carScreens'>
         <div>{EvenFile(item1)}</div>
         {/* <div className='hvr-pulse-grow'></div> */}
         <VersusBar />
@@ -102,3 +93,15 @@ function Display() {
 }
 
 export default Display;
+
+
+
+
+
+
+
+
+
+
+
+
