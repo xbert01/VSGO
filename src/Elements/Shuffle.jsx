@@ -1,16 +1,14 @@
 import CarData from "../Elements/CarData";
 
 export function Shuffle(r) {
-    for (let i = r.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = r[i];
-      r[i] = r[j];
-      r[j] = temp;
-    }
-    return r;
+  for (let i = r.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = r[i];
+    r[i] = r[j];
+    r[j] = temp;
+  }
+  return r;
 }
-
-
 
 export function Reshuffled(array) {
   let currentIndex = array.length,

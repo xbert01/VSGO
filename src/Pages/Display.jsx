@@ -5,18 +5,17 @@ import CarData from "../Elements/CarData";
 import { EmptyFile } from "../Elements/EmptyFile";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
-import { Shuffle , Reshuffled } from "../Elements/Shuffle";
+import { Shuffle, Reshuffled } from "../Elements/Shuffle";
 
 function Display() {
-  
   const shuffleData = Shuffle(CarData);
   const shuffled = Reshuffled(CarData);
-  
+
   function Next() {
     shuffled.shift();
   }
 
-   console.log(shuffled)
+  console.log(shuffled);
   const item1 = shuffled.slice(0, 1);
   const item2 = shuffled.slice(1, 2);
 
@@ -93,15 +92,4 @@ function Display() {
 }
 
 export default Display;
-
-
-
-
-
-
-
-
-
-
-
 
