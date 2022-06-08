@@ -1,33 +1,52 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import VersusBar from "../Elements/VersusBar";
 import { LeftTemplateCrypto } from "../Elements/LeftTemplateCrypto";
 import { RightTemplateCrypto } from "../Elements/RightTemplateCrypto";
 import Nav from "../Elements/Nav";
 import { useState, useEffect } from "react";
+import { Reshuffled } from "../Elements/Shuffle";
 
 function CryptoGame() {
-        const [crypto, setCrypto] = useState([]);
-        
-        useEffect(() => {
-            axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-            .then(response => {
-                setCrypto(response.data)
-            })
-            .catch(error => console.log(error));
-        }, [])
-        
-        function Next() {
-          crypto.shift();
-        }
-        
-        let item3 = crypto.slice(0, 1);
-        let item4 = crypto.slice(1, 2);
-        
-        let item3Data = item3.map((item) =>(item.market_cap_rank));
-        let item4Data = item4.map((item) =>(item.market_cap_rank));
-
+  const [crypto, setCrypto] = useState([]);
+  const [loader, setLoader] = useState(true);
   const [counter, setCount] = useState(0);
+
+  const fetchData = () => {
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+      )
+      .then((response) => {
+        if (
+          response.status >= 200 &&
+          response.status <= 299
+        ) {
+          setCrypto(Reshuffled(response.data));
+          setLoader(false);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  function Next() {
+    crypto.shift();
+  }
+
+  if (loader) {
+    return "...";
+  }
+
+  let item3 = crypto.slice(0, 1);
+  let item4 = crypto.slice(1, 2);
+
+  let item3Data = item3.map((item) => item.market_cap);
+  let item4Data = item4.map((item) => item.market_cap);
+
   function count() {
     setCount(counter + 1);
     localStorage.setItem("recentScore", counter + 1);
@@ -55,14 +74,14 @@ function CryptoGame() {
     } else goToGameOverPage();
   }
 
-
-    const getHighScore = JSON.parse(
+  const getHighScore = JSON.parse(
     localStorage.getItem("highScore")
   )[0].score;
+
   return (
     <>
       <Nav score={counter} high={getHighScore} />
-      <div className='carScreens' >
+      <div className='carScreens'>
         <div>{LeftTemplateCrypto(item3)}</div>
         {/* <div className='hvr-pulse-grow'></div> */}
         <VersusBar />
@@ -98,3 +117,4 @@ function CryptoGame() {
 }
 
 export default CryptoGame;
+

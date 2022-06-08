@@ -13,9 +13,10 @@ const showData = (data) => (
             <div className='item-name-container'>
               <h3>{item.name}</h3>
             </div>
-            <h2>Market Cap Value</h2>
+            <h2>age is</h2>
             <h2 style={{ color: "var(--magenta)" }}>
-              $ {item.market_cap.toLocaleString(undefined, {
+              ${" "}
+              {item.market_cap.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
               })}
             </h2>
@@ -26,5 +27,7 @@ const showData = (data) => (
   </>
 );
 
-export const LeftTemplateCrypto = (data) => <>{showData(data)}</>;
+export const LeftTemplatePlayer = (data) => (
+  <>{showData(data)}</>
+);
 

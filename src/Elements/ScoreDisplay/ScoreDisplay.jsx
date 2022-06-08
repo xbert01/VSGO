@@ -1,6 +1,6 @@
 const ScoreDisplay = (props) => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", margin: "2em 3em" }}>
       <h3>{props.text}</h3>
       <h3 style={{ color: "var(--magenta)" }}>
         {props.score}
@@ -10,3 +10,4 @@ const ScoreDisplay = (props) => {
 };
 
 export default ScoreDisplay;
+

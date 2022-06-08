@@ -20,7 +20,11 @@ const ScoreLogic = () => {
   )[0].score;
 
   return (
-    <div style={{ display: "flex" }}>
+    <div
+      style={{
+        display: "flex",
+      }}
+    >
       <ScoreDisplay
         text='Points:'
         score={getRecentScore}
@@ -40,7 +44,6 @@ export default ScoreLogic;
 const getRecentScore = localStorage.getItem("recentScore");
 const getHighScore = localStorage.getItem("highScore");
 
-
 function noPoints() {
   if (getRecentScore == null || undefined) {
     localStorage.setItem("recentScore", 0);
@@ -52,3 +55,4 @@ function noPoints() {
 noPoints();
 
 export { noPoints, getRecentScore, getHighScore };
+
