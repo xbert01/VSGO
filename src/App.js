@@ -24,11 +24,11 @@ const App = () => {
           path='/cryptogame'
           element={<Game2 />}
         ></Route>
-        <Route path='/soccer' element={<Game3 />}></Route>
         <Route
           path='/gameover'
           element={<GameOverPage />}
         ></Route>
+        <Route path='/soccer' element={<Game3 />}></Route>
         <Route path='/test' element={<Movies />}></Route>
         <Route
           path='/sandbox'
