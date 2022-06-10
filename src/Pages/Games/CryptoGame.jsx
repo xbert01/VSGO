@@ -6,6 +6,12 @@ import { RightTemplateCrypto } from "../../Elements/ScreenTemplates/RightTemplat
 import Nav from "../../Elements/Navbar/Nav";
 import { useState, useEffect } from "react";
 import { Reshuffled } from "../../Elements/Functions/Shuffle";
+import {
+  arrowDown,
+  arrowUp,
+  equals,
+} from "../../Elements/Icons/Icons";
+
 
 function CryptoGame() {
   const [crypto, setCrypto] = useState([]);
@@ -61,12 +67,6 @@ function CryptoGame() {
       Next();
     } else goToGameOverPage();
   }
-  function isEven() {
-    if (item3Data === item4Data) {
-      count();
-      Next();
-    } else goToGameOverPage();
-  }
   function isLower() {
     if (item3Data < item4Data) {
       count();
@@ -89,27 +89,20 @@ function CryptoGame() {
         {/* <div className='hvr-pulse-grow'></div> */}
       </div>
 
-      <div id='movies' className='button-bar'>
+      <div id='buttons' className='button-bar'>
         <button
           onClick={() => isHigher()}
           className='button button-higher'
           style={{ marginBottom: "0.5em" }}
         >
-          Higher
-        </button>
-        <button
-          onClick={() => isEven()}
-          className='button button-even'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Even
+          Higher {arrowUp}
         </button>
         <button
           onClick={() => isLower()}
           className='button button-lower'
           style={{ marginBottom: "0.5em" }}
         >
-          Lower
+          Lower {arrowDown}
         </button>
       </div>
     </>

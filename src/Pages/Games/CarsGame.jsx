@@ -6,8 +6,9 @@ import { EmptyFile } from "../../Elements/ScreenTemplates/RightTemplateCars";
 import Nav from "../../Elements/Navbar/Nav";
 import { useState, useEffect } from "react";
 import { Reshuffled } from "../../Elements/Functions/Shuffle";
+import Buttons from "../../Elements/Buttons/Buttons";
 
-function Display() {
+function CarsGame() {
   const [newData, setNewData] = useState([]);
   const shuffled = Reshuffled(CarData);
 
@@ -15,9 +16,9 @@ function Display() {
     setNewData(shuffled.map((x) => x));
   }, []);
 
-  function Next() {
-    newData.shift();
-  }
+  // function Next() {
+  //   newData.shift();
+  // }
 
   const item1 = newData.slice(0, 1);
   const item2 = newData.slice(1, 2);
@@ -30,28 +31,7 @@ function Display() {
     setCount(counter + 1);
     localStorage.setItem("recentScore", counter + 1);
   }
-  function goToGameOverPage() {
-    return (window.location.href = "/gameover");
-  }
 
-  function isHigher() {
-    if (item1Data < item2Data) {
-      count();
-      Next();
-    } else goToGameOverPage();
-  }
-  // function isEven() {
-  //   if (item1Data === item2Data) {
-  //     count();
-  //     Next();
-  //   } else goToGameOverPage();
-  // }
-  function isLower() {
-    if (item1Data > item2Data) {
-      count();
-      Next();
-    } else goToGameOverPage();
-  }
 
   const getHighScore = JSON.parse(
     localStorage.getItem("highScore")
@@ -67,33 +47,9 @@ function Display() {
         <div>{EmptyFile(item2)}</div>
         {/* <div className='hvr-pulse-grow'></div> */}
       </div>
-
-      <div id='movies' className='button-bar'>
-        <button
-          onClick={() => isHigher()}
-          className='button button-higher'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Higher
-        </button>
-        {/* <button
-          onClick={() => isEven()}
-          className='button button-even'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Even
-        </button> */}
-        <button
-          onClick={() => isLower()}
-          className='button button-lower'
-          style={{ marginBottom: "0.5em" }}
-        >
-          Lower
-        </button>
-      </div>
+      <Buttons data1={item1Data} data2={item2Data} mainData={newData} />
     </>
   );
 }
 
-export default Display;
-
+export default CarsGame;

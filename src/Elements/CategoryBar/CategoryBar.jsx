@@ -7,7 +7,7 @@ const CategoryBar = () => {
       {Categories.map((category) => (
         <Link to={category.link}>
           <div className='category-element'>
-            <img src={category.img} alt='category image'/>
+            <img src={category.img} alt='categoryImage'/>
             <h3>{category.title}</h3>
           </div>
         </Link>

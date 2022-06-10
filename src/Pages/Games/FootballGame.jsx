@@ -6,6 +6,7 @@ import { RightTemplateFootball } from "../../Elements/ScreenTemplates/RightTempl
 import Nav from "../../Elements/Navbar/Nav";
 import { useState, useEffect } from "react";
 import { Reshuffled } from "../../Elements/Functions/Shuffle";
+import { arrowDown, arrowUp, equals } from "../../Elements/Icons/Icons"
 
 function FootballGame() {
   const [team, setTeam] = useState([]);
@@ -30,12 +31,11 @@ function FootballGame() {
           response.status >= 200 &&
           response.status <= 299
         ) {
-            setTeam(
-              Reshuffled(
-                response.data.response[0].league
-                  .standings[0]
-              )
-            );
+          setTeam(
+            Reshuffled(
+              response.data.response[0].league.standings[0]
+            )
+          );
           setLoader(false);
           // console.log(response.data.response[0].league.standings[0]);
         }
@@ -58,10 +58,9 @@ function FootballGame() {
   let item3 = team.slice(0, 1);
   let item4 = team.slice(1, 2);
 
-  
   let item3Data = item3.map((item) => item.rank);
   let item4Data = item4.map((item) => item.rank);
-    
+
   function count() {
     setCount(counter + 1);
     localStorage.setItem("recentScore", counter + 1);
@@ -98,20 +97,20 @@ function FootballGame() {
         {/* <div className='hvr-pulse-grow'></div> */}
       </div>
 
-      <div id='movies' className='button-bar'>
+      <div id='buttons' className='button-bar'>
         <button
           onClick={() => isHigher()}
           className='button button-higher'
           style={{ marginBottom: "0.5em" }}
         >
-          Higher
+          Higher {arrowUp}
         </button>
         <button
           onClick={() => isLower()}
           className='button button-lower'
           style={{ marginBottom: "0.5em" }}
         >
-          Lower
+          Lower {arrowDown}
         </button>
       </div>
     </>
@@ -119,25 +118,6 @@ function FootballGame() {
 }
 
 export default FootballGame;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

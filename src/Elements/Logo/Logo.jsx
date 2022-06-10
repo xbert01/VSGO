@@ -1,9 +1,14 @@
 const Logo = () => {
   return (
     <>
-      <img  style={{ height: "6em"}} src="https://res.cloudinary.com/efer/image/upload/v1645276420/CarCompare/Logo-white_x1p432.svg" alt="logo"></img>
+      <img
+        style={{ height: "8em", width: "8em" }}
+        src='https://res.cloudinary.com/efer/image/upload/v1654885325/CarCompare/Logo-white_shancq.png'
+        alt='logo'
+      ></img>
     </>
   );
 };
 
 export default Logo;
+

@@ -1,14 +1,13 @@
 import "./GameStartPage.css";
 import CategoryBar from "../../Elements/CategoryBar/CategoryBar";
 import noPoints from "../../Elements/ScoreLogic/ScoreLogic";
+import Logo from "../../Elements/Logo/Logo";
+
 
 const GameStartPage = () => {
   return (
     <div className='gameStartPage' onLoad={noPoints()}>
-      <img
-        src='https://res.cloudinary.com/efer/image/upload/v1645276420/CarCompare/Logo-white_x1p432.svg'
-        alt='logo'
-      ></img>
+      <Logo />
       <h1>VS:GO</h1>
       <h3
         style={{ color: "var(--grey)", fontSize: "1.7em" }}
@@ -17,7 +16,7 @@ const GameStartPage = () => {
       </h3>
       <CategoryBar />
 
-        {/* <Link to="/game">
+      {/* <Link to="/game">
         <button
           style={{}}
           className='button button-start'
@@ -26,8 +25,9 @@ const GameStartPage = () => {
           Start Game
         </button>
         </Link> */}
-
     </div>
   );
 };
 export default GameStartPage;
+
+

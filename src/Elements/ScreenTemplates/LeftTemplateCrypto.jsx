@@ -13,8 +13,8 @@ const showData = (data) => (
             <div className='item-name-container'>
               <h3>{item.name}</h3>
             </div>
-            <h2>Market Cap Value</h2>
-            <h2 style={{ color: "var(--magenta)" }}>
+            <h2 style={{margin: "0.5em 0"}}>Market Cap Value is:</h2>
+            <h2 style={{ color: "var(--magenta)", fontSize: "3em"}}>
               $ {item.market_cap.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
               })}

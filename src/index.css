@@ -231,7 +231,7 @@ ul {
 
 .itemContainer {
     min-height: 35vh;
-        width: 100%;
+    width: 100%;
     height: 50%;
   }
 
@@ -255,5 +255,7 @@ ul {
   .versus-bar .vs-line {
     width: 100%;
     min-height: 1.5em;
+  position: absolute;
+
   }
 }
