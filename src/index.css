@@ -219,7 +219,7 @@ ul {
   animation-direction: alternate;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
 
   h3 {
     font-size: 2rem;
